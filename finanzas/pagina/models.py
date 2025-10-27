@@ -6,34 +6,19 @@ from django.core.exceptions import ValidationError
 class Usuario(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=20)
-    contraseña = models.CharField(max_length=20, default='contradefault')  # NO BORRAR NO PUEDO HACER LAS MIGRACIONES SIN ESO XDDD
-    perfil = models.ForeignKey('QuizIn', on_delete=models.CASCADE, related_name='usuarios')
-
-class Perfiles(models.Model):
-    id = models.AutoField(primary_key=True)
-    tipo_perfil = models.CharField(max_length=50)
-    puntaje_min = models.IntegerField()
-    puntaje_max = models.IntegerField()
-
-    def clean(self):
-        if self.puntaje_min > self.puntaje_max:
-            raise ValidationError("ta mal el puntake")
+    contraseña = models.CharField(max_length=20, default='contradefault') # NO BORRAR NO PUEDO HACER LAS MIGRACIONES SIN ESO XDDD
+    perfil = models.ForeignKey('QuizIn', on_delete=models.CASCADE, related_name='usuarios', null=True, blank=True)
 
 class QuizIn(models.Model):
     id = models.AutoField(primary_key=True)
     id_us = models.ForeignKey('Usuario', on_delete=models.CASCADE, related_name='losquiz')
-    puntaje = models.ForeignKey(Perfiles, on_delete=models.CASCADE, related_name='quiz_resultados')
-    valor_puntaje = models.IntegerField()
+    puntaje = models.IntegerField()
     
-    @property
-    def tipo_perfil(self):
-        return self.puntaje.tipo_perfil
-
     def clean(self):
-        if self.puntaje and self.valor_puntaje:
-            if not (self.puntaje.puntaje_min <= self.valor_puntaje <= self.puntaje.puntaje_max):
+        if self.puntaje:
+            if not (0 <= self.puntaje <= 100):  # Asumimos un rango válido de 0 a 100
                 raise ValidationError(
-                    f"El puntaje debe estar entre {self.puntaje.puntaje_min} y {self.puntaje.puntaje_max} lo pusiste mal 2"
+                    f"El puntaje debe estar entre 0 y 100"
                 )
 
 class Login(models.Model):
