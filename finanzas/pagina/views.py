@@ -11,9 +11,6 @@ def home_view(request):
 def videos_view(request):
     return render(request, 'pagina/videos.html')
 
-def recursos_view(request):
-    return render(request, 'pagina/recursos.html')
-
 
 # NO LO TOQUEN 4 horas de mi vida se fueron en esto
 def login_view(request):

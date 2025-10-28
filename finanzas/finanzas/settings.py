@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'quiz.apps.QuizConfig',
-    'recursos.apps.RecursosConfig',
     'pagina.apps.PaginaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'recursos'
 ]
 
 MIDDLEWARE = [

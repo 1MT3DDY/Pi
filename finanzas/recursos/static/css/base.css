@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+.container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+header{
+    padding: 20px 30px;
+    background-color: #2c3e50;
+    min-height: 60px;
+    color: white;
+    width: 100vw;
+}
