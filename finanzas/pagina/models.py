@@ -20,6 +20,29 @@ class QuizIn(models.Model):
                 raise ValidationError(
                     f"El puntaje debe estar entre 0 y 100"
                 )
+    # esta parte trabaja los nombres de los perfiles en base al puntaje
+    tipo_perfil = models.CharField(max_length=20, null=True, blank=True)
+
+    def perfil(self):
+        """Calcula la categoría textual según el puntaje numérico."""
+        if self.puntaje is None:
+            return None
+        p = self.puntaje
+        if 0 <= p <= 33:
+            return 'Conservador'
+        if 34 <= p <= 66:
+            return 'Normal'
+        if 67 <= p <= 100:
+            return 'Arriesgado'
+        return None
+
+    def save(self, *args, **kwargs):
+        # no toquen aca, esto ya esta ready
+        try:
+            self.tipo_perfil = self.perfil()
+        except Exception:
+            self.perfil = None
+        super().save(*args, **kwargs)
 
 class Login(models.Model):
     id = models.AutoField(primary_key=True)
