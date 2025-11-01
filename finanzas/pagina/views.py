@@ -35,3 +35,13 @@ def login_view(request):
             messages.error(request, 'Usuario o contraseña incorrectos')
             
     return render(request, 'pagina/login.html')
+
+
+def logout_view(request):
+    """Cierra la sesión removiendo la clave 'usuario_id' de la sesión y redirige al índice."""
+    try:
+        if 'usuario_id' in request.session:
+            del request.session['usuario_id']
+    except Exception:
+        pass
+    return redirect('/')

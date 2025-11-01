@@ -75,10 +75,25 @@
     </div>
     
     <nav class="navbar">
-        <a href="{% url 'login' %}">Login</a>
-        <a href="/home">Home</a>
-        <a href="/videos">Videos</a>
-        <a href="{% url 'recursos' %}">Recursos</a>
+        <div style="display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:0 auto;">
+            <div>
+                <a href="{% url 'login' %}">Login</a>
+                <a href="/home">Home</a>
+                <a href="/videos">Videos</a>
+                <a href="{% url 'recursos' %}">Recursos</a>
+            </div>
+            <div style="color:white;">
+                {% if usuario_nombre %}
+                    Hola, <strong>{{ usuario_nombre }}</strong>
+                    {% if usuario_tipo %}
+                        &nbsp;•&nbsp;<em>{{ usuario_tipo }}</em>
+                    {% endif %}
+                    &nbsp;|&nbsp;<a href="{% url 'logout' %}" style="color: #f1c40f; text-decoration: underline;">Cerrar sesión</a>
+                {% else %}
+                    <em>No has iniciado sesión</em>
+                {% endif %}
+            </div>
+        </div>
     </nav>
     
     <div class="container">

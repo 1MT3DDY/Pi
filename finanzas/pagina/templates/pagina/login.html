@@ -58,6 +58,13 @@
     </style>
 </head>
 <body>
+    <div style="position:fixed;top:10px;right:10px;color:#333;">
+        {% if usuario_nombre %}
+            Hola, <strong>{{ usuario_nombre }}</strong> {% if usuario_tipo %}(<em>{{ usuario_tipo }}</em>){% endif %}
+            &nbsp;|&nbsp;<a href="{% url 'logout' %}">Cerrar sesión</a>
+        {% endif %}
+    </div>
+
     <div class="login-container">
         <h2 style="text-align: center;">Iniciar Sesión</h2>
         
