@@ -28,8 +28,8 @@ def login_view(request):
             # guarda el id del user
             request.session['usuario_id'] = usuario.id
             
-            # si login == True te redirecciona al inicio
-            return redirect('inicio')  
+            # si login == True => you are going to brazil
+            return redirect('/')  
             
         except Usuario.DoesNotExist:
             messages.error(request, 'Usuario o contraseña incorrectos')
