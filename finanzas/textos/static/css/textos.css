@@ -1,0 +1,23 @@
+/* textos/static/css/textos.css */
+
+/* Regla para los enlaces de las preguntas */
+.pregunta-item a {
+    /* 🚨 1. ELIMINAR SUBRAYADO */
+    text-decoration: none; 
+    
+    /* 🚨 2. CAMBIAR EL COLOR A NEGRO */
+    color: #1D3557; 
+    
+    /* 3. Estilo opcional: negrita ligera */
+    font-weight: 700; 
+    font-size:30px;
+}
+
+/* Regla para cuando el ratón está sobre la pregunta */
+.pregunta-item a:hover {
+    /* Mantiene el color base, o puedes poner un gris sutil */
+    color: #0d902e; /* Gris oscuro para efecto sutil */
+    
+    /* Asegura que no aparezca subrayado al pasar el ratón */
+    text-decoration: none; 
+}

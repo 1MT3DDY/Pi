@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %} 
+
+{% block content %}
+    <div style="padding: 40px; max-width: 900px; margin: 0 auto;">
+        <h1>{{ titulo_pagina }}</h1>
+        <hr>
+        
+        <p style="font-size: 1.2em; line-height: 1.8;">
+            {{ respuesta_bonita }}
+        </p>
+        
+        <br>
+        <p><a href="{% url 'textos_base' %}">← Volver al Índice de Preguntas</a></p>
+    </div>
+{% endblock %}
