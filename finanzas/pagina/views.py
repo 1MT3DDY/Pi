@@ -5,9 +5,6 @@ from .models import Usuario, Login
 def index(request):
     return render(request, 'pagina/index.html')
 
-def home_view(request):
-    return render(request, 'pagina/home.html')
-
 def videos_view(request):
     return render(request, 'pagina/videos.html')
 
