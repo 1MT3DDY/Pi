@@ -1,12 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Función que manejará la petición para la app 'textos'
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 RESPUESTAS_FIJAS = {
     1: {
-        'pregunta': "¿Es importante registrar ingresos y gastos?", # Este es el texto que aparece en el índice
+        'pregunta': "¿Es importante registrar ingresos y gastos?", 
         'respuesta': "La clave es el presupuesto: asigna un nombre a cada euro antes de gastarlo.",
     },
     2: {
@@ -65,31 +64,24 @@ RESPUESTAS_FIJAS = {
         'pregunta': "¿Que es diversificaion?",
         'respuesta': "Prioriza deudas de alto interés (tarjetas). Luego, enfócate en el ahorro.",
     },
-    # 🚨 AGREGA AQUÍ LAS OTRAS 8 PREGUNTAS Y SUS RESPUESTAS (ID 3 a 10)
-    # Ejemplo de estructura:
-    # 3: {'pregunta': "¿Qué hago con un ingreso extra?", 'respuesta': "Divide ese ingreso: un tercio para diversión, un tercio para deuda, un tercio para inversión."},
-    # ...
+    # recuerdo pa tontos:
+    # 3: {'pregunta': "¿Qué hago con un ingreso extra?", 'respuesta': "nadota we"
     16: {
         'pregunta': "¿Como debería empezar?",
         'respuesta': "Es la práctica de distribuir tus inversiones entre diferentes activos para reducir el riesgo.",
     },
 }
 
-# Esta vista maneja la URL base de /textos/
 def textos_view(request):
-    # La lista de preguntas (usaremos IDs de 1 a 10 para el bucle en el HTML)
     
-    # En un proyecto real, esto vendría de un modelo de base de datos.
     preguntas_ids = range(1, 17) 
     
     contexto = {
         'titulo_pagina': 'Preguntas y Respuestas',
         'preguntas_ids': preguntas_ids
     }
-    # Renderiza la plantilla que crearemos en el paso 2
     return render(request, 'textos/index.html', contexto)
 
-# ------------------------------------------------------------------
 # Vista de Detalle (Para la respuesta bonita)
 def pregunta_detalle(request, pregunta_id):
     pregunta_id = int(pregunta_id)

@@ -16,7 +16,7 @@
 /* Regla para cuando el ratón está sobre la pregunta */
 .pregunta-item a:hover {
     /* Mantiene el color base, o puedes poner un gris sutil */
-    color: #0d902e; /* Gris oscuro para efecto sutil */
+    color: #e1c210; /* Gris oscuro para efecto sutil */
     
     /* Asegura que no aparezca subrayado al pasar el ratón */
     text-decoration: none; 
