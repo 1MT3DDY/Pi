@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'recursos.apps.RecursosConfig',
     'calculadora.apps.CalculadoraConfig',
+    'textos'
 ]
 
 MIDDLEWARE = [

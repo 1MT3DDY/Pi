@@ -1,0 +1,48 @@
+{% extends "layouts/base.html" %} 
+{% load static %}
+{% block content %} 
+    <link rel="stylesheet" href="{% static 'css/textos.css' %}">
+    <h1 style="text-align: center; margin-bottom: 70px;">Recursos</h1>
+    
+    <div class="div.categorias" style="display: flex; justify-content: space-around;">
+        
+        <div class="categoria_video" style="width: 45%;">
+            <h2>Guia basica de ahorro</h2>
+            {% for id in preguntas_ids|slice:"8" %}
+                <div class="pregunta-item" style="margin-bottom: 40px;">
+                    <h3 id="pregunta-{{ id }}"><a href="{% url 'pregunta_detalle' id %}">
+                        {% if id == 1 %} ¿Es importante registrar ingresos y gastos?
+                        {% elif id == 2 %} ¿Que papel tiene el habito y disciplina?
+                        {% elif id == 3 %} ¿Que es la regla 50/30/20?
+                        {% elif id == 4 %} ¿Ahorro a corto o largo plazo?
+                        {% elif id == 5 %} ¿Es importante el fondo de emergencia en ahorro?
+                        {% elif id == 6 %} ¿Ahorrar en efectivo o en instrumentos financieros?
+                        {% elif id == 7 %} ¿Como tiene que ser un buen lugar para guardar ahorro?
+                        {% elif id == 8 %} ¿Como debería empezar?
+                        {% endif %}
+                    </a></h3>
+
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="categoria_video" style="width: 45%;">
+            <h2>Guia basica de Inversión</h2>
+            {% for id in preguntas_ids|slice:"8:16" %}
+                <div class="pregunta-item" style="margin-bottom: 54.5px;">
+                    <h3 id="pregunta-{{ id }}"><a href="{% url 'pregunta_detalle' id %}">
+                        {% if id == 9 %} ¿Que importancia tiene la fijacion de objetivos?
+                        {% elif id == 10 %} ¿Que es el fondo de emergencia?
+                        {% elif id == 11 %} ¿Que efecto tiene la inflacion?
+                        {% elif id == 12 %} ¿Como funciona el interes compuesto?
+                        {% elif id == 13 %} ¿Que es el riesgo y retorno?
+                        {% elif id == 14 %} ¿Que es el horizonte de inversion?
+                        {% elif id == 15 %} ¿Que es diversificaion?
+                        {% elif id == 16 %} ¿Como debería emepezar?
+                        {% endif %}
+                    </a></h3>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
