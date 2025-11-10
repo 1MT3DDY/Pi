@@ -1,69 +1,130 @@
-{% extends "layouts/base.html"%}
+{% extends 'layouts/base.html' %}
 {% load static %}
+
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/calculator.css'%}">
-<link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<style>
+    /* FRONT END HECHO POR IA  */
+    .calculadora-container {
+        max-width: 600px;
+        margin: 40px auto; 
+        padding: 25px;
+        background-color: #ffffff; 
+        color: #000000;            
+        border-radius: 8px; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+    }
+
+    /* Estilos para el formulario */
+    .calculadora-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .calculadora-container input {
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc; 
+        border-radius: 4px;
+    }
+    .calculadora-container button {
+        padding: 10px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    
+    /* Estilos para los resultados (rojo, amarillo, verde) */
+    .resultado {
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .red {
+        background-color: #ffcccc;
+        border: 1px solid red;
+        color: #333; 
+    }
+    .yellow {
+        background-color: #fff3cd;
+        border: 1px solid #ffc107;
+        color: #333;
+    }
+    .green {
+        background-color: #ccffcc;
+        border: 1px solid green;
+        color: #333;
+    }
+    .calculadora-container ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .calculadora-container li {
+        margin-bottom: 5px;
+    }
+</style>
 {% endblock %}
+
+
 {% block content %}
-<section>
-    <h2>
-        Presupuesto 
-    </h2>
-    <div>
-        <input type="" placeholder="Presupuesto"> = <input type="text" name="" id="" placeholder="Sueldo/mesada"> - <input type="text" name="" id="" placeholder="gastos fijos"> 
-    </div>
-</section>
-<div class="calculator">
-    <div class="display" id="display">0</div>
-    <div class="row">
-        <button class="button" id="clear-all">AC</button>
-        <button class="button" id="parentheses-open">(</button>
-        <button class="button" id="parentheses-close">)</button>
-        <button class="button operator" id="divide">
-            <span class="material-symbols-outlined"> pen_size_1 </span>
-        </button>
-    </div>
-    <div class="row">
-        <button class="button number" id="7">7</button>
-        <button class="button number" id="8">8</button>
-        <button class="button number" id="9">9</button>
-        <button class="button operator" id="multiply">
-            <span class="material-symbols-outlined"> asterisk </span>
-        </button>
-    </div>
-    <div class="row">
-        <button class="button number" id="4">4</button>
-        <button class="button number" id="5">5</button>
-        <button class="button number" id="6">6</button>
-        <button class="button operator" id="substract">
-            <span class="material-symbols-outlined"> remove </span>
-        </button>
-    </div>
-    <div class="row">
-        <button class="button number" id="1">1</button>
-        <button class="button number" id="2">2</button>
-        <button class="button number" id="3">3</button>
-        <button class="button operator" id="plus">
-            <span class="material-symbols-outlined"> add </span>
-        </button>
-    </div>
-    <div class="row">
-        <button class="button number" id="0">0</button>
-        <button class="button" id="dot">.</button>
-        <button class="button" id="clear">
-            <span class="material-symbols-outlined"> backspace </span>
-        </button>
-        <button class="button operator" id="equal">
-            <span class="material-symbols-outlined"> equal </span>
-        </button>
-    </div>
-</div>
+<div class="calculadora-container">
 
+    <h1>Calculadora Financiera</h1>
+    <p>Ingresa tus datos para calcular tu presupuesto.</p>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/expr-eval/2.0.2/bundle.min.js"
-    integrity="sha512-TNliDPFdpL1W1sP7v9WzHUxTAY+PN7wRiHqJzntb4HpaJ0HlreSm0tzbA8MU7EBEoPTYgEtB+ZpbBB2yQQu49g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="{% static 'js/index.js'%}"></script>
+    <form action="{% url 'calculadora' %}" method="POST"> 
+        {% csrf_token %}
 
-{% endblock%}
+        <h2>Ingresos</h2>
+        <label for="ingresos">Tu Sueldo o Mesada:</label>
+        <input type="number" name="ingresos" value="{{ form_data.ingresos }}" required>
+
+        <h2>Gastos Fijos</h2>
+        <label for="gasto_arriendo">Arriendo o Hipoteca:</label>
+        <input type="number" name="gasto_arriendo" value="{{ form_data.gasto_arriendo | default:0 }}">
+
+        <label for="gasto_servicios">Servicios (Luz, Agua, Gas, Internet):</label>
+        <input type="number" name="gasto_servicios" value="{{ form_data.gasto_servicios | default:0 }}">
+
+        <label for="gasto_educacion">Educación (Colegio, Universidad):</label>
+        <input type="number" name="gasto_educacion" value="{{ form_data.gasto_educacion | default:0 }}">
+
+        <label for="gasto_otros">Otros Gastos Fijos (Seguros, etc.):</label>
+        <input type="number" name="gasto_otros" value="{{ form_data.gasto_otros | default:0 }}"> 
+
+        <button type="submit">Calcular Presupuesto</button>
+    </form>
+
+    <hr>
+
+    {% if error %}
+    <div class="resultado red">
+        <h3>Error:</h3>
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+
+    {% if presupuesto is not None %}
+    <div class="resultado {{ status_color }}">
+        <h2>Resultado de tu Presupuesto</h2>
+        <p><strong>{{ status_mensaje }}</strong></p>
+    </div>
+
+    {% if distribucion %}
+    <div class="resultado green">
+        <h3>Distribución recomendada (sobre tu presupuesto de ${{ presupuesto | floatformat:0 }})</h3>
+        <p>Te recomendamos destinar tu dinero restante así:</p>
+        <ul>
+            <li>Mercadería (40%): <strong>${{ distribucion.mercaderia | floatformat:0 }}</strong></li>
+            <li>Salud (20%): <strong>${{ distribucion.salud | floatformat:0 }}</strong></li>
+            <li>Ahorro (20%): <strong>${{ distribucion.ahorro | floatformat:0 }}</strong></li>
+            <li>Inversión (10%): <strong>${{ distribucion.inversion | floatformat:0 }}</strong></li>
+            <li>Chucherías (10%): <strong>${{ distribucion.chucherias | floatformat:0 }}</strong></li> 
+        </ul>
+    </div>
+    {% endif %}
+    {% endif %}
+
+</div> {% endblock %}  

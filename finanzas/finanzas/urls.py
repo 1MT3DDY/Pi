@@ -22,5 +22,5 @@ urlpatterns = [
     path('', include('pagina.urls')),
     path('videos/', include('recursos.urls')),
     path('calculadora/',include('calculadora.urls')),
-    path('textos/', include('textos.urls'))
+    path('textos/', include('textos.urls')) 
 ]
