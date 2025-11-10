@@ -19,6 +19,11 @@
             <a href="{% url 'index'%}">
                 Inicio
             </a>
+            {% if 'usuario_id' in request.session %}
+            <a href="{% url 'quiz' %}">
+                Quiz de Perfil
+            </a>
+            {% endif %}
         </div>
     </header>
     <main class="container">

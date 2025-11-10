@@ -4,7 +4,7 @@ from django.db import models
 
 class preguntas(models.Model):
     id_pregunta = models.AutoField(primary_key=True)
-    pregunta = models.CharField() #texto de la pregunta
+    pregunta = models.CharField(max_length=500) #texto de la pregunta
     respuesta_1 = models.IntegerField(default=0)
     respuesta_2 = models.IntegerField(default=5)
     respuesta_3 = models.IntegerField(default=10)

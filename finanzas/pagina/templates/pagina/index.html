@@ -38,6 +38,14 @@
         .navbar a:hover {
             background-color: #2c3e50;
         }
+
+        .navbar .quiz-btn {
+            background-color: #27ae60;
+        }
+
+        .navbar .quiz-btn:hover {
+            background-color: #219a52;
+        }
         
         .container {
             max-width: 800px;
@@ -80,7 +88,10 @@
                 <a href="{% url 'login' %}">Login</a>
                 <a href="{% url 'calculadora' %}">Calculadora</a> 
                 <a href="/videos">Videos</a>
-                <a href="/textos">Recursos</a> 
+                <a href="/textos">Recursos</a>
+                {% if usuario_perfil == NULL %}
+                <a href="{% url 'quiz' %}" class="quiz-btn">Quiz de Perfil</a>
+                {% endif %}
             </div>
             <div style="color:white;">
                 {% if usuario_nombre %}
