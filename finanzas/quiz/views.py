@@ -1,62 +1,172 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import preguntas
-from pagina.models import Usuario, QuizIn
+from pagina.models import Usuario, QuizIn, Perfil
 
-def quiz_view(request):
-    # debug: print session for local troubleshooting (can be removed later)
-    print("Session:", request.session.items())
+
+def _ensure_user_can_take_quiz(request):
+    """Return (usuario, redirect_response) where redirect_response is None when OK."""
     if 'usuario_id' not in request.session:
         messages.error(request, 'Debes iniciar sesión para realizar el quiz')
-        return redirect('login')
-    # comprobar que el usuario existe
+        return None, redirect('login')
     try:
         usuario = Usuario.objects.get(id=request.session['usuario_id'])
     except Usuario.DoesNotExist:
         messages.error(request, 'Usuario no encontrado. Inicia sesión nuevamente.')
-        return redirect('login')
-    # comprobar si el usuario ya tiene quizzes asociados (no permitir si ya hay alguno)
+        return None, redirect('login')
     existing_quizzes = QuizIn.objects.filter(id_us=usuario)
     if existing_quizzes.exists():
         messages.info(request, 'Ya tienes un quiz asociado. No puedes volver a completarlo.')
+        return None, redirect('index')
+    return usuario, None
+
+
+def quiz_start(request):
+    """Initialize quiz session and redirect to the first question."""
+    usuario, redirect_resp = _ensure_user_can_take_quiz(request)
+    if redirect_resp:
+        return redirect_resp
+
+    # Prepare question order and empty answers in session
+    q_ids = list(preguntas.objects.values_list('id_pregunta', flat=True).order_by('id_pregunta'))
+    if not q_ids:
+        messages.error(request, 'No hay preguntas disponibles en el cuestionario.')
         return redirect('index')
+    request.session['quiz_qids'] = q_ids
+    request.session['quiz_answers'] = {}
+    request.session['quiz_score'] = 0
+    request.session.modified = True
+    # redirect to first question (index 0)
+    return redirect('quiz_question', idx=0)
+
+
+def quiz_question(request, idx):
+    """Show a single question by index and handle saving the selected answer into the session."""
+    usuario, redirect_resp = _ensure_user_can_take_quiz(request)
+    if redirect_resp:
+        return redirect_resp
+
+    qids = request.session.get('quiz_qids')
+    if qids is None:
+        # If session expired or user landed directly, re-init
+        return redirect('quiz')
+
+    total = len(qids)
+    if idx < 0 or idx >= total:
+        return redirect('quiz')
+
+    qid = qids[idx]
+    try:
+        pregunta = preguntas.objects.get(id_pregunta=qid)
+    except preguntas.DoesNotExist:
+        messages.error(request, 'Pregunta no encontrada.')
+        return redirect('index')
+
+    # On POST save the answer and move to next or submit
     if request.method == 'POST':
-        # Obtener todas las preguntas
-        todas_preguntas = preguntas.objects.all()
-        puntaje_total = 0
+        respuesta = request.POST.get('respuesta')
+        if respuesta not in ('1', '2', '3'):
+            messages.error(request, 'Selecciona una opción válida.')
+            return redirect('quiz_question', idx=idx)
 
-        # Calcular puntaje total
-        for pregunta in todas_preguntas:
-            respuesta = request.POST.get(f'pregunta_{pregunta.id_pregunta}')
-            if respuesta:
-                if respuesta == '1':
-                    puntaje_total += pregunta.respuesta_1
-                elif respuesta == '2':
-                    puntaje_total += pregunta.respuesta_2
-                elif respuesta == '3':
-                    puntaje_total += pregunta.respuesta_3
+        answers = request.session.get('quiz_answers', {})
+        answers[str(qid)] = respuesta
+        request.session['quiz_answers'] = answers
+        
+        # Compute score increment based on answer
+        if respuesta == '1':
+            score_add = pregunta.respuesta_1
+        elif respuesta == '2':
+            score_add = pregunta.respuesta_2
+        else:  # respuesta == '3'
+            score_add = pregunta.respuesta_3
+        
+        # Update usuario.score in database
+        usuario.score += score_add
+        usuario.save()
+        
+        # Keep score in session for display
+        request.session['quiz_score'] = usuario.score
+        request.session.modified = True
 
-        # Crear el registro de QuizIn asociado al usuario
-        quiz_in = QuizIn.objects.create(
-            id_us=usuario,
-            puntaje=puntaje_total
-        )
-
-        # Determinar el tipo de perfil para mostrar al usuario
-        if puntaje_total <= 30:
-            tipo_perfil = 'conservador'
-        elif puntaje_total <= 60:
-            tipo_perfil = 'normal'
+        # If there is a next question, go there; otherwise submit
+        if idx + 1 < total:
+            return redirect('quiz_question', idx=idx + 1)
         else:
-            tipo_perfil = 'arriesgado'
+            return redirect('quiz_submit')
 
-        messages.success(request, f'¡Quiz completado! Tu perfil es: {tipo_perfil.capitalize()}')
-        return redirect('index')
-    
-    # GET request - mostrar el formulario
-    # GET request - mostrar el formulario
+    # GET: render single question
+    answers = request.session.get('quiz_answers', {})
+    selected = answers.get(str(qid))
+    current_score = request.session.get('quiz_score', 0)
+    progress_percent = int(((idx + 1) / total) * 100) if total > 0 else 0
     context = {
-        'preguntas': preguntas.objects.all(),
-        'can_take_quiz': True,
+        'pregunta': pregunta,
+        'idx': idx,
+        'total': total,
+        'selected': selected,
+        'current_score': current_score,
+        'progress_percent': progress_percent,
     }
-    return render(request, 'quiz/quiz_form.html', context)
+    return render(request, 'quiz/question.html', context)
+
+
+def quiz_submit(request):
+    """Create QuizIn record, assign user profile based on puntaje, and show results."""
+    usuario, redirect_resp = _ensure_user_can_take_quiz(request)
+    if redirect_resp:
+        return redirect_resp
+
+    qids = request.session.get('quiz_qids')
+    answers = request.session.get('quiz_answers', {})
+    if not qids:
+        messages.error(request, 'No hay respuestas para procesar o la sesión expiró.')
+        return redirect('quiz')
+
+    puntaje_total = 0
+    for qid in qids:
+        try:
+            preg = preguntas.objects.get(id_pregunta=qid)
+        except preguntas.DoesNotExist:
+            continue
+        resp = answers.get(str(qid))
+        if resp == '1':
+            puntaje_total += preg.respuesta_1
+        elif resp == '2':
+            puntaje_total += preg.respuesta_2
+        elif resp == '3':
+            puntaje_total += preg.respuesta_3
+
+    # Crear el registro de QuizIn asociado al usuario
+    QuizIn.objects.create(
+        id_us=usuario,
+        puntaje=puntaje_total
+    )
+
+    # Asignar perfil basándose en el puntaje
+    if puntaje_total <= 33:
+        perfil_id = 1
+        tipo_perfil = 'conservador'
+    elif puntaje_total <= 66:
+        perfil_id = 2
+        tipo_perfil = 'normal'
+    else:
+        perfil_id = 3
+        tipo_perfil = 'arriesgado'
+
+    # Asignar perfil al usuario
+    try:
+        perfil = Perfil.objects.get(id=perfil_id)
+        usuario.perfil = perfil
+        usuario.save()
+    except Perfil.DoesNotExist:
+        messages.warning(request, f'Perfil {perfil_id} no encontrado en la base de datos.')
+
+    # Limpiar la sesión del quiz
+    for k in ('quiz_qids', 'quiz_answers', 'quiz_score'):
+        if k in request.session:
+            del request.session[k]
+    request.session.modified = True
+
+    messages.success(request, f'¡Quiz completado! Tu perfil es: {tipo_perfil.capitalize()}. Tu puntuación acumulada es: {usuario.score}')
+    return redirect('index')
