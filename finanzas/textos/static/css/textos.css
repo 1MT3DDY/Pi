@@ -21,3 +21,17 @@
     /* Asegura que no aparezca subrayado al pasar el ratón */
     text-decoration: none; 
 }
+
+/* textos/static/css/textos.css */
+
+.imagen-respuesta {
+    max-width: 100%;    /* Asegura que no sea más ancha que su contenedor */
+    height: auto;       /* Mantiene la proporción de la imagen */
+    max-height: 300px;  /* Limita la altura de la imagen */
+    object-fit: cover;  /* Recorta si es necesario para cubrir el área sin distorsionar */
+    display: block;     /* Asegura que ocupe su propia línea y los márgenes funcionen */
+    margin: 0 auto 20px auto; /* Centra la imagen y añade margen inferior */
+    border-radius: 6px; /* Bordes redondeados */
+    border: 6px solid #153271; /* 3px de grosor, estilo sólido, color azul marino oscuro */
+    /* Puedes ajustar el grosor (3px) si lo deseas */
+}

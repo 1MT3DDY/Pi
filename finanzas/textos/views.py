@@ -71,6 +71,7 @@ No necesitas algo complejo. Puedes usar:<br><br>
 -Monefy<br><br>
 
 Lo importante no es la herramienta, sino la constancia.""",
+'imagen_respuesta': 'ahorro_1.webp',
     },
     2: {
         'pregunta': "¿Que papel tiene el habito y disciplina?",
@@ -83,6 +84,7 @@ Lo importante no es la herramienta, sino la constancia.""",
         Un hábito es algo que repetimos automáticamente.
         Cuando el ahorro se vuelve hábito, ya no duele ni se siente como un sacrificio.
         Es simplemente parte de la rutina.""",
+        'imagen_respuesta':'ahorro_2.webp',
     },
     3: {
         'pregunta': "¿Que es la regla 50/30/20?",
@@ -99,6 +101,7 @@ Lo importante no es la herramienta, sino la constancia.""",
      Este 20% se poodra aprovechar de muchas maneras ya sea para estudios, viajes, herramientas de estudio o tambien se peude usar para invertir y crear fondos de emergencia.<br><br>
      La regla 50/30/20 no es una obligación rígida, sino una guía para que el dinero no se vaya sin que nos demos cuenta. Nos ayuda a vivir el presente, disfrutar, cubrir lo necesario y al mismo tiempo construir un futuro estable.
      """,
+     'imagen_respuesta':'ahorro_3.png',
     },
     4: {
         'pregunta': "¿Ahorro a corto o largo plazo?",
@@ -131,6 +134,7 @@ Ambos tipos de ahorro son necesarios y se complementan. El corto plazo te da seg
 Lo ideal es comenzar por el corto plazo —creando un fondo de emergencia— y luego avanzar hacia el largo plazo, donde puedes usar instrumentos que generen rentabilidad.  
 Ahorrar no es elegir entre corto o largo plazo, sino saber equilibrarlos para cuidar el presente sin descuidar el futuro.
 """,
+'imagen_respuesta':'ahorro_4.jpg',
     },
     5: {
         'pregunta': "¿Es importante el fondo de emergencia en ahorro?",
@@ -165,6 +169,7 @@ Te permite vivir con mayor seguridad y reducir el estrés ante los imprevistos.
 Antes de pensar en invertir, siempre se debe construir este fondo: es la base que sostiene todas las demás decisiones financieras.  
 Ahorrar es importante, pero tener un fondo de emergencia bien planificado es lo que marca la diferencia entre la estabilidad y la incertidumbre.
 """,
+'imagen_respuesta':'ahorro_5.jpg',
     },
     6: {
         'pregunta': "¿Ahorrar en efectivo o en instrumentos financieros?",
@@ -208,6 +213,7 @@ Ahorrar en efectivo puede servir para emergencias inmediatas, pero a largo plazo
 Los instrumentos financieros, en cambio, permiten que tus ahorros trabajen por ti, generando crecimiento y protección frente a la inflación.  
 Un buen ahorro combina ambas estrategias: un poco de efectivo disponible y el resto en opciones seguras y rentables.
 """,
+'imagen_respuesta':'ahorro_6.webp',
     },
     7: {
         'pregunta': "¿Como tiene que ser un buen lugar para guardar ahorro?",
@@ -245,6 +251,7 @@ Un buen lugar para guardar ahorro debe ser seguro, accesible y con posibilidad d
 El dinero ahorrado no debe quedarse inmóvil, sino mantenerse protegido y, si es posible, crecer con el tiempo.  
 Combinar seguridad con rendimiento es la clave para un ahorro inteligente y sostenible.  
 No se trata solo de “guardar” dinero, sino de <b>ponerlo en el lugar correcto para que trabaje a tu favor.</b>""",
+'imagen_respuesta':'ahorro_7.jpg',
     },
     8: {
         'pregunta': "¿Como debería empezar?",
@@ -276,6 +283,7 @@ Habrá meses fáciles y meses difíciles. Lo importante no es ser perfecto, sino
 
 <b>Consejo final:</b><br>
 No esperes el momento ideal para empezar, porque ese momento nunca llega. Empieza hoy, con lo que tengas, incluso si es una cantidad simbólica. El ahorro no crece por magia, crece por repetición. Lo que importa no es cuánto guardas al principio, sino cómo este pequeño hábito empieza a moldear tu manera de relacionarte con el dinero y con tus propias metas.""",
+'imagen_respuesta':'ahorro_8.jpg',
     },
     9: {
         'pregunta': "¿Que importancia tiene la fijacion de objetivos?",
@@ -308,6 +316,7 @@ Puedes llevar control de tus metas con apps o plataformas como:
 </ul><br>
 
 En resumen, <b>invertir sin objetivos es como correr sin saber hacia dónde vas</b>. Cuando defines metas claras, tus decisiones financieras dejan de ser impulsivas y se transforman en pasos estratégicos hacia tu independencia económica.""",
+'imagen_respuesta':'inversion_1.webp',
     },
     10: {
         'pregunta': "¿Que es el fondo de emergencia?",
@@ -335,7 +344,8 @@ El fondo de emergencia no es una inversión en sí, sino un <b>seguro que proteg
 <b>5. Mantenlo separado:</b><br>
 Guarda tu fondo de emergencia en una cuenta distinta de tus inversiones o gastos diarios. Así evitarás gastarlo por impulso o mezclarlo con dinero destinado a invertir.<br><br>
 
-En conclusión, <b>un inversionista sin fondo de emergencia está construyendo sobre terreno inestable</b>. Antes de buscar rentabilidad, asegúrate de tener estabilidad."""
+En conclusión, <b>un inversionista sin fondo de emergencia está construyendo sobre terreno inestable</b>. Antes de buscar rentabilidad, asegúrate de tener estabilidad.""",
+'imagen_respuesta':'inversion_2.webp',
     },
     11: {
         'pregunta': "¿Que efecto tiene la inflacion?",
@@ -361,6 +371,7 @@ En Chile, la inflación se mide a través del <b>Índice de Precios al Consumido
 Además, el valor de la UF (Unidad de Fomento) se ajusta diariamente según el IPC, por lo que muchas inversiones la utilizan como referencia para mantener su valor real en el tiempo.<br><br>
 
 En conclusión, <b>la inflación es el enemigo silencioso del dinero inmóvil</b>. Un buen inversionista entiende que no basta con ahorrar o invertir, sino hacerlo de forma que el dinero crezca más rápido de lo que suben los precios.""",
+'imagen_respuesta':'inversion_3.avif',
     },
     12: {
         'pregunta': "¿Como funciona el interes compuesto?",
@@ -397,6 +408,7 @@ Hoy existen plataformas que te permiten simular el crecimiento de tus inversione
 El interés compuesto no depende de la suerte ni del mercado, sino de tus hábitos. Si inviertes con constancia, paciencia y sin retirar tus ganancias, el crecimiento será inevitable. En cambio, si retiras dinero con frecuencia, el ciclo se interrumpe y pierdes su efecto acumulativo.<br><br>
 
 En conclusión, el <b>interés compuesto es el motor silencioso del crecimiento financiero</b>. Transforma pequeñas decisiones constantes en grandes resultados futuros. Mientras algunos buscan “la mejor inversión”, los inversionistas inteligentes se enfocan en dejar que el tiempo y la disciplina hagan el trabajo.""",
+'imagen_respuesta':'inversion_4.png',
     },
     13: {
         'pregunta': "¿Que es el riesgo y retorno?",
@@ -435,6 +447,7 @@ Si mezclas ambas, podrías obtener un retorno intermedio, pero con menor riesgo 
 - Si quieres medir el riesgo y retorno de tus inversiones, puedes usar herramientas como las que ofrecen <a href="https://www.fintual.cl" target="_blank">Fintual</a>, <a href="https://www.felp.cl" target="_blank">FELP</a> o <a href="https://www.cmfchile.cl" target="_blank">la CMF</a>, donde podrás comparar distintos instrumentos financieros chilenos.<br><br>
 
 En conclusión, el <b>riesgo y el retorno son dos caras de la misma moneda</b>. No se trata de evitar el riesgo, sino de conocerlo y usarlo a tu favor. Cuanto más claro tengas tus objetivos y tu tolerancia al cambio, más fácil será tomar decisiones que te acerquen a tus metas sin perder la calma ni el control de tu dinero.""",
+'imagen_respuesta':'inversion_5.webp',
     },
     14: {
         'pregunta': "¿Que es el horizonte de inversion?",
@@ -466,6 +479,7 @@ La inversión es una carrera de largo aliento. Muchos se frustran porque no ven 
 
 <b>Consejo final:</b><br>
 Invertir no es un acto de suerte, sino de estrategia. Aprende de cada error, por pequeño que sea, y usa esa experiencia para mejorar. La meta no es evitar equivocarte, sino convertirte en alguien que sabe cómo reaccionar cuando el mercado cambia. En el mundo de las inversiones, la paciencia y la educación valen más que cualquier consejo rápido.""",
+'imagen_respuesta':'inversion_6.png',
     },
     15: {
         'pregunta': "¿Que es diversificaion?",
@@ -500,6 +514,7 @@ Imagina que cada tipo de inversión es una pierna de una mesa. Si la mesa tiene 
 - Creer que diversificar significa tener muchas inversiones del mismo tipo (por ejemplo, varios fondos chilenos que en realidad invierten en lo mismo).<br><br>
 
 En resumen, la <b>diversificación es el escudo del inversionista inteligente</b>. No se trata solo de buscar ganancias, sino de proteger lo que tienes. Un portafolio diversificado resiste mejor las crisis, se adapta a los cambios del mercado y permite que tus inversiones crezcan de forma más estable y segura en el tiempo.""",
+'imagen_respuesta':'inversion_7.jpg',
     },
     # recuerdo pa tontos:
     # 3: {'pregunta': "¿Qué hago con un ingreso extra?", 'respuesta': "nadota we"
@@ -544,6 +559,7 @@ Supongamos que inviertes $10.000 mensuales durante 5 años en un fondo que rinde
 
 <b>Consejo final:</b><br>
 No esperes tener mucho para empezar; empieza con lo que tengas. El tiempo y la constancia son más poderosos que cualquier monto inicial. Cada peso invertido hoy es una semilla que crecerá con los años. Como dice una frase muy conocida en finanzas: <i>“El mejor momento para invertir fue ayer; el segundo mejor momento es hoy.”</i>""",
+'imagen_respuesta':'inversion_8.webp',
     },
 }
 
@@ -567,6 +583,7 @@ def pregunta_detalle(request, pregunta_id):
 
     contexto = {
         'titulo_pagina': datos_pregunta['pregunta'],
-        'respuesta_bonita': mark_safe(datos_pregunta['respuesta'])
+        'respuesta_bonita': mark_safe(datos_pregunta['respuesta']),
+        'imagen_respuesta': datos_pregunta['imagen_respuesta'],
     }
     return render(request, 'textos/preguntas_detalle.html', contexto)

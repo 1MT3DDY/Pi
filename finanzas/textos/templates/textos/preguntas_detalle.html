@@ -1,10 +1,14 @@
 {% extends "layouts/base.html" %} 
-
+{% load static %}
 {% block content %}
+    <link rel="stylesheet" href="{% static 'css/textos.css' %}">
     <div style="padding: 40px; max-width: 900px; margin: 0 auto;">
         <h1>{{ titulo_pagina }}</h1>
-        <hr>
-        
+        <hr><br>
+        <img class="imagen-respuesta"
+             src="{% static 'images/'|add:imagen_respuesta %}" 
+            alt="{{ titulo_pagina }}" 
+            style="max-width: 100%; height: auto; margin-bottom: 20px; border-radius: 6px;">
         <p style="font-size: 1.2em; line-height: 1.8;">
             {{ respuesta_bonita }}
         </p>

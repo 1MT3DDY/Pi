@@ -29,7 +29,7 @@
         <div class="categoria_video" style="width: 45%;">
             <h2>Guia basica de Inversión</h2>
             {% for id in preguntas_ids|slice:"8:16" %}
-                <div class="pregunta-item" style="margin-bottom: 49px;">
+                <div class="pregunta-item" style="margin-bottom: 54.5px;">
                     <h3 id="pregunta-{{ id }}"><a href="{% url 'pregunta_detalle' id %}">
                         {% if id == 9 %} ¿Que importancia tiene la fijacion de objetivos?
                         {% elif id == 10 %} ¿Que es el fondo de emergencia?
