@@ -29,16 +29,16 @@
         <div class="categoria_video" style="width: 45%;">
             <h2>Guia basica de Inversión</h2>
             {% for id in preguntas_ids|slice:"8:16" %}
-                <div class="pregunta-item" style="margin-bottom: 54.5px;">
+                <div class="pregunta-item" style="margin-bottom: 49px;">
                     <h3 id="pregunta-{{ id }}"><a href="{% url 'pregunta_detalle' id %}">
                         {% if id == 9 %} ¿Que importancia tiene la fijacion de objetivos?
                         {% elif id == 10 %} ¿Que es el fondo de emergencia?
                         {% elif id == 11 %} ¿Que efecto tiene la inflacion?
                         {% elif id == 12 %} ¿Como funciona el interes compuesto?
                         {% elif id == 13 %} ¿Que es el riesgo y retorno?
-                        {% elif id == 14 %} ¿Que es el horizonte de inversion?
+                        {% elif id == 14 %} ¿Qué errores cometen los nuevos?
                         {% elif id == 15 %} ¿Que es diversificaion?
-                        {% elif id == 16 %} ¿Como debería emepezar?
+                        {% elif id == 16 %} ¿Cómo debería empezar?
                         {% endif %}
                     </a></h3>
                 </div>
