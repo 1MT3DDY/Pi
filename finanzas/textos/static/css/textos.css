@@ -6,7 +6,7 @@
     text-decoration: none; 
     
     /* 🚨 2. CAMBIAR EL COLOR A NEGRO */
-    color: #1D3557; 
+    color: #aadee5; 
     
     /* 3. Estilo opcional: negrita ligera */
     font-weight: 700; 
@@ -16,7 +16,7 @@
 /* Regla para cuando el ratón está sobre la pregunta */
 .pregunta-item a:hover {
     /* Mantiene el color base, o puedes poner un gris sutil */
-    color: #e1c210; /* Gris oscuro para efecto sutil */
+    color: #f1e900; /* Gris oscuro para efecto sutil */
     
     /* Asegura que no aparezca subrayado al pasar el ratón */
     text-decoration: none; 
@@ -32,6 +32,52 @@
     display: block;     /* Asegura que ocupe su propia línea y los márgenes funcionen */
     margin: 0 auto 20px auto; /* Centra la imagen y añade margen inferior */
     border-radius: 6px; /* Bordes redondeados */
-    border: 6px solid #153271; /* 3px de grosor, estilo sólido, color azul marino oscuro */
+    border: 6px solid #173f94; /* 3px de grosor, estilo sólido, color azul marino oscuro */
     /* Puedes ajustar el grosor (3px) si lo deseas */
+}
+
+.seccion-textos-fondo {
+    /* 🚨 ESTILOS DE FONDO LIMITADOS A ESTA SECCIÓN */
+    background-color: #3a526d; 
+    
+    /* Asegura que el color se extienda a todo el ancho disponible */
+    width: 100%;
+    
+    /* Añade un poco de relleno arriba y abajo para que no esté pegado al menú */
+    padding-top: 30px; 
+    padding-bottom: 30px; 
+}
+
+/* Nota: Los estilos de .categorias y .pregunta-item deben seguir aquí para el texto blanco, si es necesario. */
+
+.categorias { 
+    /* Mantenemos el centrado del contenido interno, si lo necesitas */
+    max-width: 1200px; /* O el ancho máximo que uses globalmente */
+    margin: 0 auto; 
+}
+
+.categoria_video h2 {
+    /* 🚨 Color Blanco o muy claro */
+    color: #e2e510; 
+    
+    /* Aumenta el tamaño de la fuente para que se vean como títulos de sección */
+    font-size: 30px; 
+    
+    /* Hace el texto negrita */
+    font-weight: bold; 
+    
+    /* Ajusta el margen inferior para separarlo de la primera pregunta */
+    margin-bottom: 40px;
+}
+
+.seccion-textos-fondo h1 {
+    /* Color Blanco para visibilidad en fondo oscuro */
+    color: #fcff2d; 
+    
+    /* Tamaño y centrado */
+    font-size: 41px; 
+    text-align: center;
+    
+    /* Opcional: Ajusta el margen si el título está muy pegado al borde */
+    margin-bottom: 35px; 
 }
