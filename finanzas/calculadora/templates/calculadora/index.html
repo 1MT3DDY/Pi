@@ -91,6 +91,9 @@
         <label for="gasto_educacion">Educación (Colegio, Universidad):</label>
         <input type="number" name="gasto_educacion" value="{{ form_data.gasto_educacion | default:0 }}">
 
+        <label for="gasto_transporte">Transporte (Pasajes, Combustible):</label> 
+        <input type="number" name="gasto_transporte" value="{{ form_data.gasto_transporte | default:0 }}"> 
+
         <label for="gasto_otros">Otros Gastos Fijos (Seguros, etc.):</label>
         <input type="number" name="gasto_otros" value="{{ form_data.gasto_otros | default:0 }}"> 
 
@@ -114,17 +117,57 @@
 
     {% if distribucion %}
     <div class="resultado green">
-        <h3>Distribución recomendada (sobre tu presupuesto de ${{ presupuesto | floatformat:0 }})</h3>
-        <p>Te recomendamos destinar tu dinero restante así:</p>
-        <ul>
-            <li>Mercadería (40%): <strong>${{ distribucion.mercaderia | floatformat:0 }}</strong></li>
-            <li>Salud (20%): <strong>${{ distribucion.salud | floatformat:0 }}</strong></li>
-            <li>Ahorro (20%): <strong>${{ distribucion.ahorro | floatformat:0 }}</strong></li>
-            <li>Inversión (10%): <strong>${{ distribucion.inversion | floatformat:0 }}</strong></li>
-            <li>Chucherías (10%): <strong>${{ distribucion.chucherias | floatformat:0 }}</strong></li> 
-        </ul>
+        {% if perfil_id == 1 %}
+            <h3>Distribución recomendada (sobre tu presupuesto de ${{ presupuesto | floatformat:0 }})</h3>
+            <p>Te recomendamos destinar tu dinero restante así:</p>
+            <ul>
+                <li>Mercadería (30%): <strong>${{ distribucion.mercaderia | floatformat:0 }}</strong></li>
+                <li>Salud (15%): <strong>${{ distribucion.salud | floatformat:0 }}</strong></li>
+                <li>Ahorro (15%): <strong>${{ distribucion.ahorro | floatformat:0 }}</strong></li>
+                <li>Inversión (5%): <strong>${{ distribucion.inversion | floatformat:0 }}</strong></li>
+                <li>Transporte (5%): <strong>${{ distribucion.transporte | floatformat:0 }}</strong></li>
+                <li>Otros (30%): <strong>${{ distribucion.otros | floatformat:0 }}</strong></li> 
+            </ul>
+
+        {% elif perfil_id == 2 %} 
+            <h3>Distribución recomendada (sobre tu presupuesto de ${{ presupuesto | floatformat:0 }})</h3>
+            <p>Te recomendamos destinar tu dinero restante así:</p>
+            <ul>
+                <li>Mercadería (30%): <strong>${{ distribucion.mercaderia | floatformat:0 }}</strong></li>
+                <li>Salud (15%): <strong>${{ distribucion.salud | floatformat:0 }}</strong></li>
+                <li>Ahorro (10%): <strong>${{ distribucion.ahorro | floatformat:0 }}</strong></li>
+                <li>Inversión (10%): <strong>${{ distribucion.inversion | floatformat:0 }}</strong></li>
+                <li>Transporte (5%): <strong>${{ distribucion.transporte | floatformat:0 }}</strong></li>
+                <li>Otros (30%): <strong>${{ distribucion.otros | floatformat:0 }}</strong></li> 
+            </ul>
+
+        {% elif perfil_id == 3 %}
+            <h3>Distribución recomendada (sobre tu presupuesto de ${{ presupuesto | floatformat:0 }})</h3>
+            <p>Te recomendamos destinar tu dinero restante así:</p>
+            <ul>
+                <li>Mercadería (30%): <strong>${{ distribucion.mercaderia | floatformat:0 }}</strong></li>
+                <li>Salud (15%): <strong>${{ distribucion.salud | floatformat:0 }}</strong></li>
+                <li>Ahorro (5%): <strong>${{ distribucion.ahorro | floatformat:0 }}</strong></li>
+                <li>Inversión (15%): <strong>${{ distribucion.inversion | floatformat:0 }}</strong></li>
+                <li>Transporte (5%): <strong>${{ distribucion.transporte | floatformat:0 }}</strong></li>
+                <li>Otros (30%): <strong>${{ distribucion.otros | floatformat:0 }}</strong></li> 
+            </ul>
+        {% endif %} 
     </div>
     {% endif %}
     {% endif %}
 
-</div> {% endblock %}  
+    {% if mensaje_recomendado %}
+    <hr style="margin-top: 25px;">
+    
+    <div class="consejo" style="background-color: #f4f8ff; padding: 20px; border-left: 5px solid #007bff; border-radius: 8px; margin-top: 20px;">
+        <h4 style="margin-bottom: 10px; color: #007bff;">💡 Un consejo de FinanzApp para ti:</h4>
+        
+        <p style="font-size: 1.1em; line-height: 1.6; color: #333;">
+            {{ mensaje_recomendado|safe }}
+        </p>
+    </div>
+    {% endif %}
+    </div>
+
+</div> {% endblock %}   
