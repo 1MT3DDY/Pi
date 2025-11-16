@@ -21,10 +21,10 @@ Registrar ingresos y gastos permite 3 cosas clave:<br>
 La mayoría de las personas vive con una impresión de cuánto gasta, no con una cifra real.
 Cuando anotas todo descubres cuáles son tus gastos inevitables (transporte, comida, cuentas). Y cuáles son gastos hormiga (pequeños gastos diarios que parecen inofensivos). Ese reconocimiento inicial suele ser impactante y genera un cambio de mentalidad:
 “Ah, no es que no pueda ahorrar, es que no sabía en qué se me estaba yendo el dinero.” 
-<br>
+<br><br>
 <b>2. ORDENAR PRIORIDADES</b>
 <br><br>
-Cuando ves tus gastos frente a tus ojos, puedes preguntarte:<br><br>
+Cuando ves tus gastos frente a tus ojos, puedes preguntarte:<br>
 
 - ¿Este gasto era realmente necesario?<br>
 
@@ -70,7 +70,11 @@ No necesitas algo complejo. Puedes usar:<br><br>
 
 -Monefy<br><br>
 
-Lo importante no es la herramienta, sino la constancia.""",
+Lo importante no es la herramienta, sino la constancia.<br><br>
+Fuentes usadas:<br>
+- <a href= "https://www.latercera.com/transformadores/noticia/flujo-de-caja-la-importancia-de-llevar-el-registro-de-los-ingresos-y-egresos/66JS35B2YJHUNLSF2MUONKJXGU/" target="_blank">laTercera</a><br>
+- <a href= "https://www.appcopec.cl/blog/registro-gastos-mensuales/" target="_blank">Copec</a><br>
+""",
 'imagen_respuesta': 'ahorro_1.webp',
     },
     2: {
@@ -83,7 +87,10 @@ Lo importante no es la herramienta, sino la constancia.""",
         <b>SÉ CONSTANTE:</b> Los buenos hábitos se construyen con constancia. Sé disciplinado no solo con tus finanzas, sino también con otros hábitos saludables que influyen en tu bienestar general. <br><br>
         Un hábito es algo que repetimos automáticamente.
         Cuando el ahorro se vuelve hábito, ya no duele ni se siente como un sacrificio.
-        Es simplemente parte de la rutina.""",
+        Es simplemente parte de la rutina.<br><br>
+Fuentes usadas:<br>
+- <a href= "https://alansariexchange.com/blog/5-steps-to-achieving-financial-discipline/" target="_blank">alansariex change</a><br>
+- <a href= "https://www.firstcitizens.com/personal/insights/family/financial-discipline" target="_blank">first citizens</a><br>""",
         'imagen_respuesta':'ahorro_2.webp',
     },
     3: {
@@ -99,7 +106,9 @@ Lo importante no es la herramienta, sino la constancia.""",
      <b>El 20% para Ahorro y Metas:</b> Este es el porcentaje más importante, porque representa tu yo del futuro.<br>
      <b>¿Para qué sirve este 20%?</b><br>
      Este 20% se poodra aprovechar de muchas maneras ya sea para estudios, viajes, herramientas de estudio o tambien se peude usar para invertir y crear fondos de emergencia.<br><br>
-     La regla 50/30/20 no es una obligación rígida, sino una guía para que el dinero no se vaya sin que nos demos cuenta. Nos ayuda a vivir el presente, disfrutar, cubrir lo necesario y al mismo tiempo construir un futuro estable.
+     La regla 50/30/20 no es una obligación rígida, sino una guía para que el dinero no se vaya sin que nos demos cuenta. Nos ayuda a vivir el presente, disfrutar, cubrir lo necesario y al mismo tiempo construir un futuro estable.<br><br>
+Fuentes usadas:<br>
+- <a href= "https://chile.larrainvial.com/lv-insights/finanzas-personales/formula-secreta-para-ahorrar" target="_blank">larrainvial</a><br>
      """,
      'imagen_respuesta':'ahorro_3.png',
     },
@@ -129,10 +138,12 @@ Es el dinero destinado a metas que se cumplirán dentro de varios años. Aquí e
 - Menor liquidez (no se necesita retirar de inmediato).<br>
 - Requiere planificación, constancia y visión de futuro.<br><br>
 
-<b>EN CONCLUSIÓN:</b><br>
 Ambos tipos de ahorro son necesarios y se complementan. El corto plazo te da seguridad y respuesta frente a imprevistos, mientras que el largo plazo te entrega estabilidad y crecimiento financiero.  
 Lo ideal es comenzar por el corto plazo —creando un fondo de emergencia— y luego avanzar hacia el largo plazo, donde puedes usar instrumentos que generen rentabilidad.  
-Ahorrar no es elegir entre corto o largo plazo, sino saber equilibrarlos para cuidar el presente sin descuidar el futuro.
+Ahorrar no es elegir entre corto o largo plazo, sino saber equilibrarlos para cuidar el presente sin descuidar el futuro.<br><br>
+Fuentes usadas:<br>
+- <a href= "https://www.cmfchile.cl/portal/principal/613/articles-90068_recurso_4.pdf" target="_blank">cmf chile</a><br>
+- <a href= "https://www.revistaeconomia.com/ahorro-a-corto-plazo-inversion-a-largo-plazo-claves-para-equilibrar-tus-finanzas-segun-tus-metas-2/" target="_blank">revista economía</a><br>
 """,
 'imagen_respuesta':'ahorro_4.jpg',
     },
@@ -163,19 +174,21 @@ Si eso parece mucho, no te preocupes: lo importante es comenzar con pequeñas me
 - Usar el fondo para gastos no urgentes (como compras impulsivas o vacaciones).<br>
 - No reponerlo después de usarlo.<br><br>
 
-<b>EN CONCLUSIÓN:</b><br>
 El fondo de emergencia no es solo un ahorro más; es un escudo financiero.  
 Te permite vivir con mayor seguridad y reducir el estrés ante los imprevistos.  
 Antes de pensar en invertir, siempre se debe construir este fondo: es la base que sostiene todas las demás decisiones financieras.  
-Ahorrar es importante, pero tener un fondo de emergencia bien planificado es lo que marca la diferencia entre la estabilidad y la incertidumbre.
+Ahorrar es importante, pero tener un fondo de emergencia bien planificado es lo que marca la diferencia entre la estabilidad y la incertidumbre.<br><br>
+Fuentes usadas:<br>
+- <a href= "https://www.cmfchile.cl/portal/prensa/615/w3-article-94614.html" target="_blank">cmf chile</a><br>
+- <a href= "https://biblio.hacienda.cl/estrategia-nacional-de-inclusion-financiera/inclusion-financiera-en-chile-marco-legal-y-normativo-vigente-y-situacion-actual" target="_blank">biblio hacienda</a><br>
+- <a href= "https://eselmomento.diariofinanciero.cl/la-importancia-de-tener-un-fondo-de-emergencia/" target="_blank">es el momento</a><br>
 """,
 'imagen_respuesta':'ahorro_5.jpg',
     },
     6: {
         'pregunta': "¿Ahorrar en efectivo o en instrumentos financieros?",
-        'respuesta': """<br>Al momento de ahorrar, una de las decisiones más importantes es <b>dónde guardar el dinero</b>.  
-Muchas personas eligen hacerlo en efectivo por costumbre o desconfianza hacia los bancos, pero existen opciones más seguras y rentables que vale la pena conocer.  
-Ambas formas tienen ventajas y desventajas, y lo ideal es entenderlas para elegir de manera inteligente.<br><br>
+        'respuesta': """<br>Antes de ahorrar hay que determinar de que modo lo vas a hacer, mucha gente lo hace en efectivo ya que es una manera
+        sencilla, pero tambien hay instrumentos y plataformas digitales que nos ayudan con nuestra meta de ahorrar, por eso hay que decidir de que manera vas a comenzar a guardar tu dinero ya que puede conllevar grandes beneficios el donde lo dejas.<br><br>
 
 <b>AHORRAR EN EFECTIVO:</b><br>
 Consiste en guardar dinero físico, generalmente en casa o en algún lugar de acceso rápido.<br><br>
@@ -208,19 +221,21 @@ La decisión depende del objetivo del ahorro:<br>
 - Si necesitas acceso rápido o manejas montos pequeños → <b>efectivo o cuenta de ahorro simple</b>.<br>
 - Si ahorras para metas de mediano o largo plazo → <b>depósito a plazo o instrumentos financieros con rentabilidad</b>.<br><br>
 
-<b>EN CONCLUSIÓN:</b><br>
 Ahorrar en efectivo puede servir para emergencias inmediatas, pero a largo plazo hace que el dinero pierda valor.  
 Los instrumentos financieros, en cambio, permiten que tus ahorros trabajen por ti, generando crecimiento y protección frente a la inflación.  
-Un buen ahorro combina ambas estrategias: un poco de efectivo disponible y el resto en opciones seguras y rentables.
+Un buen ahorro combina ambas estrategias: un poco de efectivo disponible y el resto en opciones seguras y rentables.<br><br>
+Fuentes usadas:<br>
+- <a href="https://depositoaplazo.cl/leyes-fomes-pero-importantes/" target="_blank">depositoaplazo chile</a><br>
+- <a href="https://buscadorfinanciero.cl/wp-content/uploads/2021/02/garantia-estal-de-depositos.jpg" target="_blank">buscador financiero</a><br>
+- <a href="https://www.bancoestado.cl/content/bancoestado-public/cl/es/home/home/productos-/ahorro-e-inversiones-/cuentas-de-ahorro-.html#/" target="_blank">BancoEstado</a>
 """,
 'imagen_respuesta':'ahorro_6.webp',
     },
     7: {
         'pregunta': "¿Como tiene que ser un buen lugar para guardar ahorro?",
         'respuesta': """
-<br>Elegir un buen lugar para guardar el dinero ahorrado es una decisión clave en la educación financiera.  
-No todos los lugares son adecuados, ya que el objetivo del ahorro es <b>proteger y hacer crecer el dinero</b>, no simplemente guardarlo.  
-Un buen lugar de ahorro debe ofrecer <b>seguridad, accesibilidad y estabilidad</b>.<br><br>
+<br>Hay que tener claro que el lugar donde vas a dejar tu dinero es de mega importancia, ya que hay tomar en cuenta que no todos los
+lugares son seguros para dejar lo ahorrado, a fin de cuentas el objetivo es proteger y hacer crecer nuestro dinero.<br><br>
 
 <b>1. SEGURIDAD:</b><br>
 Tu ahorro debe estar protegido contra robos, pérdidas o fraudes.  
@@ -246,16 +261,19 @@ El acceso digital hoy es importante. Un buen lugar para guardar ahorro debe perm
 <b>Consejo:</b> Evita plataformas o “inversiones” que prometan ganancias muy altas sin explicar claramente cómo funcionan.  
 Si suena demasiado bueno para ser verdad, probablemente no lo sea.<br><br>
 
-<b>EN CONCLUSIÓN:</b><br>
 Un buen lugar para guardar ahorro debe ser seguro, accesible y con posibilidad de rentabilidad.  
 El dinero ahorrado no debe quedarse inmóvil, sino mantenerse protegido y, si es posible, crecer con el tiempo.  
 Combinar seguridad con rendimiento es la clave para un ahorro inteligente y sostenible.  
-No se trata solo de “guardar” dinero, sino de <b>ponerlo en el lugar correcto para que trabaje a tu favor.</b>""",
+No se trata solo de “guardar” dinero, sino de ponerlo en el lugar correcto para que trabaje a tu favor.<br><br>
+Fuentes usadas:
+-<a href="https://www.cmfchile.cl/educa/621/w3-article-27460.html" target="_blank">cmf chile</a><br>
+-<a href="https://www.bancoestado.cl/content/bancoestado-public/cl/es/home/garantia-estatal-y-preferencias-para-los-depositos-y-captaciones.html" target="_blank">BancoEstado</a>""",
 'imagen_respuesta':'ahorro_7.jpg',
     },
     8: {
         'pregunta': "¿Como debería empezar?",
-        'respuesta': """<br>Empezar a ahorrar no significa simplemente guardar dinero; significa comenzar a construir una relación más sana con tus finanzas. Para muchos, el primer paso no es matemático, sino mental: dejar de ver el ahorro como un sacrificio y comenzar a verlo como una forma de ganar libertad futura. Cuando cambias esa perspectiva, ahorrar se vuelve mucho más natural y menos pesado.<br><br>
+        'respuesta': """<br>Comenzemos entendiendo que el ahorrar no significa un gran sacrificio, ya que si queremos poder evitar el mal uso de tu dinero
+o simplemente guardar para un futuro, el ahorro se debe ver como una nueva relacion que formamos con nuestros habitos, si logras verlo de esa manera entonces ya tienes suelo por donde pararte<br><br>
 
 <b>1. Identificar qué te está frenando:</b><br>
 Antes de pensar en cuánto ahorrar, piensa en por qué no lo has hecho antes. Muchas veces no es por falta de dinero, sino por hábitos: gastos impulsivos, mala organización o la creencia de que “no vale la pena ahorrar poco”. Reconocer esto es el verdadero punto de partida. No necesitas tener suelto sobrante para empezar; necesitas claridad. Cuando entiendes tus propios patrones de gasto, ya das tu primer gran paso.<br><br>
@@ -280,16 +298,19 @@ Ver tu avance hace que el ahorro se sienta real. Puedes usar apps como Monefy, S
 
 <b>8. Entender que ahorrar es un proceso emocional, no solo financiero:</b><br>
 Habrá meses fáciles y meses difíciles. Lo importante no es ser perfecto, sino constante. Si un mes no puedes ahorrar lo que querías, no has fracasado; lo importante es no abandonar el hábito. Ahorrar es una conversación continua contigo mismo sobre tus prioridades y sobre la vida que quieres construir. Cada peso que separas es una afirmación de que estás pensando en tu propio futuro.<br><br>
-
-<b>Consejo final:</b><br>
-No esperes el momento ideal para empezar, porque ese momento nunca llega. Empieza hoy, con lo que tengas, incluso si es una cantidad simbólica. El ahorro no crece por magia, crece por repetición. Lo que importa no es cuánto guardas al principio, sino cómo este pequeño hábito empieza a moldear tu manera de relacionarte con el dinero y con tus propias metas.""",
+Fuentes usadas:<br> 
+- <a href= "https://www.latercera.com/servicios/noticia/conoce-estos-5-consejos-de-ahorro-para-personas-jovenes/MND4LD3FOZCPFI35X6KAFN72SQ/" target="_blank">La Tercera</a><br>
+-<a href="https://educacionfinancierabancoestado.cl/docs/default-source/default-document-library/manual-de-educaci%C3%B3n-financiera---ahorro.pdf" target="_blank">BancoEstado</a><br>
+-<a href="https://www.cmfchile.cl/educa/621/articles-80755_recurso_1.pdf" target="_blank">cmf chile</a>
+""",
 'imagen_respuesta':'ahorro_8.jpg',
     },
+    #<a href="" target="_blank"></a>
     9: {
         'pregunta': "¿Que importancia tiene la fijacion de objetivos?",
         'respuesta': """<br>Fijar objetivos es el primer paso para construir una estrategia de inversión sólida y con sentido. Sin metas claras, cualquier decisión financiera se vuelve improvisada y puede llevar a perder dinero o no lograr lo que realmente se busca.<br><br>
 
-La <b>fijación de objetivos</b> te permite establecer un rumbo. Invertir sin objetivos es como navegar sin mapa: puedes avanzar, pero sin saber si te estás acercando o alejando de tu destino.<br><br>
+La fijación de objetivos te permite establecer un rumbo. Invertir sin objetivos es como navegar sin mapa: puedes avanzar, pero sin saber si te estás acercando o alejando de tu destino.<br><br>
 
 <b>1. Define tu propósito financiero:</b><br>
 Antes de invertir, pregúntate: ¿para qué quiero invertir? Puede ser para comprar una casa, financiar estudios, asegurar la jubilación o alcanzar independencia económica. Cada meta requiere estrategias y plazos distintos.<br><br>
@@ -299,33 +320,37 @@ Los objetivos deben ser <b>Específicos, Medibles, Alcanzables, Relevantes y con
 
 <b>3. Divide tus metas según el plazo:</b><br>
 
-<li><b>Corto plazo (1-2 años):</b> Ideal para fondos de emergencia o metas pequeñas, usando instrumentos de bajo riesgo como depósitos a plazo o fondos conservadores.</li>
-<li><b>Mediano plazo (3-5 años):</b> Puedes asumir un poco más de riesgo, como fondos balanceados o mixtos.</li>
-<li><b>Largo plazo (5+ años):</b> Aquí entran inversiones más agresivas como acciones, ETFs o fondos de pensiones voluntarios (APV).</li>
-</ul><br>
+<b>Corto plazo (1-2 años):</b> Ideal para fondos de emergencia o metas pequeñas, usando instrumentos de bajo riesgo como depósitos a plazo o fondos conservadores.<br>
+<b>Mediano plazo (3-5 años):</b> Puedes asumir un poco más de riesgo, como fondos balanceados o mixtos.<br>
+<b>Largo plazo (5+ años):</b> Aquí entran inversiones más agresivas como acciones, ETFs o fondos de pensiones voluntarios (APV).<br>
+<br>
 
 <b>4. Ajusta tus objetivos con el tiempo:</b><br>
 Tus metas pueden cambiar: tal vez tu ingreso mejora o surgen nuevas prioridades. Revisa tus objetivos cada 6 o 12 meses y ajusta tu estrategia de inversión si es necesario.<br><br>
 
 <b>5. Usa herramientas de planificación:</b><br>
-Puedes llevar control de tus metas con apps o plataformas como:
-<ul>
-<li><a href="https://www.fintual.cl" target="_blank">Fintual</a> – para fijar metas y ver su progreso con simulaciones reales.</li>
-<li><a href="https://www.banchileinversiones.cl" target="_blank">Banchile Inversiones</a> – permite crear objetivos y asignar fondos según plazo y riesgo.</li>
-<li>O simplemente usa una hoja de cálculo de Google Sheets o Excel con columnas de “meta”, “monto”, “plazo” y “avance”.</li>
-</ul><br>
+Puedes llevar control de tus metas con apps o plataformas como:<br>
 
-En resumen, <b>invertir sin objetivos es como correr sin saber hacia dónde vas</b>. Cuando defines metas claras, tus decisiones financieras dejan de ser impulsivas y se transforman en pasos estratégicos hacia tu independencia económica.""",
+- <a href="https://www.fintual.cl" target="_blank">Fintual</a> – para fijar metas y ver su progreso con simulaciones reales.<br>
+- <a href="https://www.banchileinversiones.cl" target="_blank">Banchile Inversiones</a> – permite crear objetivos y asignar fondos según plazo y riesgo.<br>
+- O simplemente usa una hoja de cálculo de Google Sheets o Excel con columnas de “meta”, “monto”, “plazo” y “avance”.<br>
+<br>
+
+Invertir sin objetivos es como correr sin saber hacia dónde vas. Cuando defines metas claras, tus decisiones financieras dejan de ser impulsivas y se transforman en pasos estratégicos hacia tu independencia económica.<br><br>
+Fuentes usadas:<br>
+- <a href= "https://www.principal.cl/informate/blog/actualidad/como-fijar-tus-objetivos-financieros" target="_blank">principal</a><br>
+- <a href= "https://www.cmfchile.cl/educa/621/w3-article-1674.html" target="_blank">cmf chile</a><br>
+- <a href= "https://www.generali.es/blog/generalimasqueseguros/objetivos-financieros-regla-smart/" target="_blank">generali</a><br>""",
 'imagen_respuesta':'inversion_1.webp',
     },
     10: {
         'pregunta': "¿Que es el fondo de emergencia?",
-        'respuesta': """<br>El <b>fondo de emergencia</b> es una parte esencial dentro de cualquier estrategia de inversión. Su objetivo no es generar grandes ganancias, sino <b>proteger tus inversiones</b> y tu estabilidad financiera ante imprevistos.<br><br>
+        'respuesta': """<br>El fondo de emergencia es una parte esencial dentro de cualquier estrategia de inversión. Su objetivo no es generar grandes ganancias, sino proteger tus inversiones y tu estabilidad financiera ante imprevistos.<br><br>
 
 Cuando inviertes, tu dinero puede estar en instrumentos que suben y bajan de valor con el tiempo. Si ocurre una urgencia —como perder el empleo o tener un gasto médico inesperado— podrías verte obligado a vender tus inversiones en un mal momento, perdiendo dinero. El fondo de emergencia evita justamente eso.<br><br>
 
 <b>1. ¿Para qué sirve dentro de la inversión?</b><br>
-Actúa como un “colchón financiero” que te da liquidez inmediata sin tener que tocar tus inversiones a largo plazo. En otras palabras, <b>te permite mantener la calma y no vender en pérdidas</b>.<br><br>
+Actúa como un “colchón financiero” que te da liquidez inmediata sin tener que tocar tus inversiones a largo plazo. En otras palabras, te permite mantener la calma y no vender en pérdidas.<br><br>
 
 <b>2. ¿Cuánto debería tener?</b><br>
 Generalmente se recomienda ahorrar entre 3 y 6 meses de tus gastos mensuales fijos. Si tu trabajo o fuente de ingresos es inestable, puedes ampliar ese margen.<br>
@@ -344,12 +369,16 @@ El fondo de emergencia no es una inversión en sí, sino un <b>seguro que proteg
 <b>5. Mantenlo separado:</b><br>
 Guarda tu fondo de emergencia en una cuenta distinta de tus inversiones o gastos diarios. Así evitarás gastarlo por impulso o mezclarlo con dinero destinado a invertir.<br><br>
 
-En conclusión, <b>un inversionista sin fondo de emergencia está construyendo sobre terreno inestable</b>. Antes de buscar rentabilidad, asegúrate de tener estabilidad.""",
+Un inversionista sin fondo de emergencia está construyendo sobre terreno inestable. Antes de buscar rentabilidad, asegúrate de tener estabilidad.<br><br>
+Fuentes usadas:<br>
+- <a href= "https://btgpactual.cl/inversiones-digitales/blog/aprende/finanzas-personales/como-crear-un-fondo-de-emergencia/" target="_blank">btgpactual</a><br>
+- <a href= "https://www.cmfchile.cl/portal/prensa/615/w3-article-94614.html" target="_blank">cmf chile</a><br>
+""",
 'imagen_respuesta':'inversion_2.webp',
     },
     11: {
         'pregunta': "¿Que efecto tiene la inflacion?",
-        'respuesta': """<br>La <b>inflación</b> es uno de los factores más importantes a considerar al invertir, porque afecta directamente el <b>poder adquisitivo de tu dinero</b>. En términos simples, la inflación es el aumento sostenido de los precios en una economía. Esto significa que con el tiempo, el mismo monto de dinero compra menos bienes y servicios.<br><br>
+        'respuesta': """<br>La inflación es uno de los factores más importantes a considerar al invertir, porque afecta directamente el <b>poder adquisitivo de tu dinero</b>. En términos simples, la inflación es el aumento sostenido de los precios en una economía. Esto significa que con el tiempo, el mismo monto de dinero compra menos bienes y servicios.<br><br>
 
 Por ejemplo, si hoy con $10.000 puedes comprar una determinada cantidad de productos, y la inflación es de un 5% anual, el próximo año necesitarás $10.500 para comprar exactamente lo mismo. Esa pérdida de valor es invisible, pero real.<br><br>
 
@@ -359,30 +388,34 @@ Por ejemplo, si hoy con $10.000 puedes comprar una determinada cantidad de produ
 - Impacta de forma distinta según el tipo de inversión: los instrumentos de renta fija (como depósitos a plazo) sufren más con inflación alta, mientras que los activos reales o variables (como acciones o fondos ligados a la UF) pueden ofrecer mejor protección.<br><br>
 
 <b>2. Cómo protegerte de la inflación:</b><br>
-- Prefiere instrumentos que ajusten su valor con la inflación, como depósitos o bonos en <b>UF (Unidad de Fomento)</b>.<br>
-- Considera invertir parte de tu dinero en <b>ETFs</b> o fondos que incluyan activos internacionales, ya que te exponen a economías con diferentes niveles de inflación.<br>
+- Prefiere instrumentos que ajusten su valor con la inflación, como depósitos o bonos en UF (Unidad de Fomento).<br>
+- Considera invertir parte de tu dinero en ETFs o fondos que incluyan activos internacionales, ya que te exponen a economías con diferentes niveles de inflación.<br>
 - No dejes grandes montos guardados en efectivo o cuentas sin interés, ya que pierden valor cada mes.<br><br>
 
 <b>3. Inflación y rentabilidad real:</b><br>
 Lo importante no es solo cuánto ganas, sino cuánto ganas “en términos reales”. Si una inversión te da 4% anual y la inflación es del 5%, en realidad tu rentabilidad real es -1%. Estás perdiendo poder adquisitivo, aunque veas tu saldo subir.<br><br>
 
 <b>4. Qué mirar en Chile:</b><br>
-En Chile, la inflación se mide a través del <b>Índice de Precios al Consumidor (IPC)</b>. Puedes revisar su evolución mensual en la página del <a href="https://www.ine.cl" target="_blank">Instituto Nacional de Estadísticas (INE)</a>.<br>
+En Chile, la inflación se mide a través del Índice de Precios al Consumidor (IPC). Puedes revisar su evolución mensual en la página del <a href="https://www.ine.cl" target="_blank">Instituto Nacional de Estadísticas (INE)</a>.<br>
 Además, el valor de la UF (Unidad de Fomento) se ajusta diariamente según el IPC, por lo que muchas inversiones la utilizan como referencia para mantener su valor real en el tiempo.<br><br>
 
-En conclusión, <b>la inflación es el enemigo silencioso del dinero inmóvil</b>. Un buen inversionista entiende que no basta con ahorrar o invertir, sino hacerlo de forma que el dinero crezca más rápido de lo que suben los precios.""",
+La inflación es el enemigo silencioso del dinero inmóvil. Un buen inversionista entiende que no basta con ahorrar o invertir, sino hacerlo de forma que el dinero crezca más rápido de lo que suben los precios.<br><br>
+Fuentes usadas:<br>
+- <a href= "https://www.getsmarteraboutmoney.ca/learning-path/understanding-risk/inflation-your-investments/" target="_blank">getsmarter</a><br>
+- <a href= "https://www.principal.cl/informate/blog/actualidad/impacto-de-la-inflacion" target="_blank">principal</a><br>
+""",
 'imagen_respuesta':'inversion_3.avif',
     },
     12: {
         'pregunta': "¿Como funciona el interes compuesto?",
-        'respuesta': """<br>El <b>interés compuesto</b> es una de las fuerzas más poderosas del mundo de las inversiones. Se le llama así porque los intereses que ganas se reinvierten automáticamente, generando nuevos intereses sobre las ganancias anteriores. Es decir, <b>tu dinero empieza a trabajar para ti, y después tus ganancias también trabajan por ti</b>.<br><br>
+        'respuesta': """<br>El interés compuesto es una de las fuerzas más poderosas del mundo de las inversiones. Se le llama así porque los intereses que ganas se reinvierten automáticamente, generando nuevos intereses sobre las ganancias anteriores. Es decir, tu dinero empieza a trabajar para ti, y después tus ganancias también trabajan por ti.<br><br>
 
 A diferencia del interés simple —donde siempre ganas lo mismo sobre tu monto inicial— el interés compuesto hace que tus ganancias crezcan como una bola de nieve: pequeñas al principio, pero enormes con el paso de los años. Es la razón por la que los inversionistas exitosos valoran tanto el tiempo y la constancia.<br><br>
 
 <b>1. El poder del tiempo en la inversión:</b><br>
 El interés compuesto premia la paciencia. Cuanto antes empieces a invertir, aunque sea con montos pequeños, más tiempo tendrá tu dinero para multiplicarse. Por ejemplo, si inviertes $500.000 a una rentabilidad del 8% anual, al cabo de 10 años tendrás más de $1.000.000. Pero si mantienes esa inversión durante 20 años, el monto se acerca a los $2.300.000, sin agregar un peso más. Esa diferencia se debe solo al tiempo y a la reinversión de intereses.<br><br>
 
-En palabras simples, <b>el tiempo es más importante que el dinero</b>. No necesitas grandes sumas para generar riqueza, sino empezar pronto y dejar que el interés compuesto haga su trabajo.<br><br>
+En palabras simples, el tiempo es más importante que el dinero. No necesitas grandes sumas para generar riqueza, sino empezar pronto y dejar que el interés compuesto haga su trabajo.<br><br>
 
 <b>2. Cómo se calcula de forma sencilla:</b><br>
 El funcionamiento del interés compuesto puede entenderse así:<br>
@@ -407,12 +440,16 @@ Hoy existen plataformas que te permiten simular el crecimiento de tus inversione
 <b>6. Una reflexión clave:</b><br>
 El interés compuesto no depende de la suerte ni del mercado, sino de tus hábitos. Si inviertes con constancia, paciencia y sin retirar tus ganancias, el crecimiento será inevitable. En cambio, si retiras dinero con frecuencia, el ciclo se interrumpe y pierdes su efecto acumulativo.<br><br>
 
-En conclusión, el <b>interés compuesto es el motor silencioso del crecimiento financiero</b>. Transforma pequeñas decisiones constantes en grandes resultados futuros. Mientras algunos buscan “la mejor inversión”, los inversionistas inteligentes se enfocan en dejar que el tiempo y la disciplina hagan el trabajo.""",
+El interés compuesto es el motor silencioso del crecimiento financiero. Transforma pequeñas decisiones constantes en grandes resultados futuros. Mientras algunos buscan “la mejor inversión”, los inversionistas inteligentes se enfocan en dejar que el tiempo y la disciplina hagan el trabajo.<br><br>
+Fuentes usadas:<br>
+- <a href= "https://www.bbva.com/es/salud-financiera/guia-de-finanzas-para-no-financieros-interes-compuesto/" target="_blank">cmf chile</a><br>
+- <a href= "https://ayuda.fintual.cl/es/articles/5152246-las-inversiones-de-fintual-usan-interes-compuesto" target="_blank">ayuda fintual</a><br>
+""",
 'imagen_respuesta':'inversion_4.png',
     },
     13: {
         'pregunta': "¿Que es el riesgo y retorno?",
-        'respuesta': """<br>Cuando hablamos de invertir, el <b>riesgo</b> y el <b>retorno</b> (también llamado rentabilidad) son dos conceptos que van siempre de la mano. Entender su relación es fundamental para tomar buenas decisiones financieras y no dejarse llevar solo por la emoción o la promesa de ganar rápido.<br><br>
+        'respuesta': """<br>Cuando hablamos de invertir, el riesgo y el retorno (también llamado rentabilidad) son dos conceptos que van siempre de la mano. Entender su relación es fundamental para tomar buenas decisiones financieras y no dejarse llevar solo por la emoción o la promesa de ganar rápido.<br><br>
 
 <b>1. Qué significa el riesgo:</b><br>
 El riesgo es la posibilidad de que una inversión no salga como esperabas. En otras palabras, es la probabilidad de perder parte o todo el dinero invertido, o de ganar menos de lo que pensabas. Todas las inversiones tienen cierto nivel de riesgo: unas más, otras menos. Por ejemplo:<br>
@@ -420,18 +457,18 @@ El riesgo es la posibilidad de que una inversión no salga como esperabas. En ot
 - Las acciones o criptomonedas tienen riesgo alto, ya que su valor puede subir o bajar de forma rápida e impredecible.<br><br>
 
 <b>2. Qué es el retorno:</b><br>
-El retorno es la <b>recompensa</b> que obtienes por asumir ese riesgo. Se mide en porcentaje y representa cuánto ganas (o pierdes) respecto a lo que invertiste. Por ejemplo, si inviertes $100.000 y ganas $10.000, tu retorno fue del 10%.<br><br>
+El retorno es la recompensa que obtienes por asumir ese riesgo. Se mide en porcentaje y representa cuánto ganas (o pierdes) respecto a lo que invertiste. Por ejemplo, si inviertes $100.000 y ganas $10.000, tu retorno fue del 10%.<br><br>
 
 <b>3. La regla más importante:</b><br>
-En inversión, siempre existe una relación directa: <b>a mayor riesgo, mayor retorno potencial</b>. Pero también mayor posibilidad de pérdida. Y al contrario: las inversiones más seguras suelen ofrecer retornos más pequeños. El secreto está en encontrar el equilibrio que se ajuste a tu perfil y tus metas personales.<br><br>
+En inversión, siempre existe una relación directa: a mayor riesgo, mayor retorno potencial. Pero también mayor posibilidad de pérdida. Y al contrario: las inversiones más seguras suelen ofrecer retornos más pequeños. El secreto está en encontrar el equilibrio que se ajuste a tu perfil y tus metas personales.<br><br>
 
 <b>4. Cómo decidir cuánto riesgo tomar:</b><br>
-Antes de invertir, es importante conocer tu <b>perfil de riesgo</b>. Este perfil depende de tu edad, tus ingresos, tus objetivos y tu tolerancia emocional ante las pérdidas. Por ejemplo:<br>
+Antes de invertir, es importante conocer tu perfil de riesgo. Este perfil depende de tu edad, tus ingresos, tus objetivos y tu tolerancia emocional ante las pérdidas. Por ejemplo:<br>
 - Si eres joven y tienes metas a largo plazo (como comprar una casa o jubilarte), puedes asumir un poco más de riesgo, ya que tienes tiempo para recuperarte si algo baja de valor.<br>
 - Si necesitas el dinero pronto o no te sientes cómodo viendo que tus inversiones bajan temporalmente, es mejor optar por instrumentos más seguros y estables.<br><br>
 
 <b>5. La importancia del equilibrio:</b><br>
-Un inversionista inteligente no busca eliminar el riesgo, sino <b>administrarlo</b>. Eso se logra diversificando (como vimos antes) y combinando inversiones de bajo y alto riesgo para equilibrar el retorno total del portafolio. Por ejemplo:<br>
+Un inversionista inteligente no busca eliminar el riesgo, sino administrarlo. Eso se logra diversificando (como vimos antes) y combinando inversiones de bajo y alto riesgo para equilibrar el retorno total del portafolio. Por ejemplo:<br>
 - 60% en inversiones seguras (depósitos a plazo, bonos).<br>
 - 40% en inversiones con más potencial (acciones, fondos internacionales).<br><br>
 
@@ -446,7 +483,11 @@ Si mezclas ambas, podrías obtener un retorno intermedio, pero con menor riesgo 
 - Aprende a revisar el historial de rendimiento y la volatilidad de los fondos antes de invertir.<br>
 - Si quieres medir el riesgo y retorno de tus inversiones, puedes usar herramientas como las que ofrecen <a href="https://www.fintual.cl" target="_blank">Fintual</a>, <a href="https://www.felp.cl" target="_blank">FELP</a> o <a href="https://www.cmfchile.cl" target="_blank">la CMF</a>, donde podrás comparar distintos instrumentos financieros chilenos.<br><br>
 
-En conclusión, el <b>riesgo y el retorno son dos caras de la misma moneda</b>. No se trata de evitar el riesgo, sino de conocerlo y usarlo a tu favor. Cuanto más claro tengas tus objetivos y tu tolerancia al cambio, más fácil será tomar decisiones que te acerquen a tus metas sin perder la calma ni el control de tu dinero.""",
+El riesgo y el retorno son dos caras de la misma moneda. No se trata de evitar el riesgo, sino de conocerlo y usarlo a tu favor. Cuanto más claro tengas tus objetivos y tu tolerancia al cambio, más fácil será tomar decisiones que te acerquen a tus metas sin perder la calma ni el control de tu dinero.<br><br>
+Fuentes usadas:<br>
+- <a href= "https://www.cmfchile.cl/educa/621/w3-article-510.html" target="_blank">cmf chile</a><br>
+- <a href= "https://www.cmfchile.cl/portal/principal/613/w3-article-607" target="_blank">cmf chile</a><br>
+- <a href= "https://www.df.cl/opinion/columnistas/riesgo-en-inversiones" target="_blank">diario finanzas</a><br>""",
 'imagen_respuesta':'inversion_5.webp',
     },
     14: {
@@ -457,7 +498,7 @@ En conclusión, el <b>riesgo y el retorno son dos caras de la misma moneda</b>. 
 Uno de los primeros errores es invertir sin saber para qué. Muchas personas colocan dinero en fondos o acciones solo porque escucharon que “están subiendo”, sin definir un propósito ni un plazo. Invertir sin objetivo es como subirse a un barco sin saber a qué puerto quieres llegar. Antes de mover tu dinero, define si buscas ahorrar para un proyecto, protegerte de la inflación o construir patrimonio a largo plazo.<br><br>
 
 <b>2. Invertir dinero que podrías necesitar pronto:</b><br>
-Otro error común es usar dinero destinado a gastos próximos o emergencias. Esto puede obligarte a vender tus inversiones en el peor momento, perdiendo parte de lo invertido. Por eso siempre se recomienda tener un <b>fondo de emergencia</b> antes de empezar a invertir, y usar solo el dinero que no afecte tu día a día.<br><br>
+Otro error común es usar dinero destinado a gastos próximos o emergencias. Esto puede obligarte a vender tus inversiones en el peor momento, perdiendo parte de lo invertido. Por eso siempre se recomienda tener un fondo de emergencia antes de empezar a invertir, y usar solo el dinero que no afecte tu día a día.<br><br>
 
 <b>3. Buscar ganancias rápidas:</b><br>
 El deseo de “hacerse rico rápido” es probablemente el error más caro. Los nuevos inversionistas muchas veces caen en modas o recomendaciones virales sin analizar los riesgos. La inversión real se basa en el tiempo, la paciencia y el interés compuesto, no en la suerte o la especulación. Como se dice en finanzas: “quien busca doblar su dinero rápido, suele terminar perdiéndolo igual de rápido”.<br><br>
@@ -477,13 +518,16 @@ Muchos comienzan a invertir sin entender cómo funciona lo que están comprando.
 <b>8. No tener paciencia:</b><br>
 La inversión es una carrera de largo aliento. Muchos se frustran porque no ven resultados inmediatos y abandonan antes de tiempo. Pero los grandes resultados llegan con el tiempo, gracias al poder del interés compuesto. La clave está en ser constante, revisar tus metas periódicamente y dejar que el tiempo haga su trabajo.<br><br>
 
-<b>Consejo final:</b><br>
-Invertir no es un acto de suerte, sino de estrategia. Aprende de cada error, por pequeño que sea, y usa esa experiencia para mejorar. La meta no es evitar equivocarte, sino convertirte en alguien que sabe cómo reaccionar cuando el mercado cambia. En el mundo de las inversiones, la paciencia y la educación valen más que cualquier consejo rápido.""",
+
+Invertir no es un acto de suerte, sino de estrategia. Aprende de cada error, por pequeño que sea, y usa esa experiencia para mejorar. La meta no es evitar equivocarte, sino convertirte en alguien que sabe cómo reaccionar cuando el mercado cambia. En el mundo de las inversiones, la paciencia y la educación valen más que cualquier consejo rápido.<br><br>
+Fuentes usadas:<br>
+- <a href= "https://www.moonfare.com/glossary/time-horizon" target="_blank">moonfare</a><br>
+""",
 'imagen_respuesta':'inversion_6.png',
     },
     15: {
         'pregunta': "¿Que es diversificaion?",
-        'respuesta': """<br>La <b>diversificación</b> es uno de los principios más importantes de toda estrategia de inversión. En palabras simples, significa no poner todos los huevos en la misma canasta. Su objetivo es reducir el riesgo sin tener que renunciar completamente a la rentabilidad. En lugar de depender del éxito o fracaso de una sola inversión, se busca equilibrar el portafolio para que unas ganancias compensen las posibles pérdidas de otras.<br><br>
+        'respuesta': """<br>La diversificación es uno de los principios más importantes de toda estrategia de inversión. En palabras simples, significa no poner todos los huevos en la misma canasta. Su objetivo es reducir el riesgo sin tener que renunciar completamente a la rentabilidad. En lugar de depender del éxito o fracaso de una sola inversión, se busca equilibrar el portafolio para que unas ganancias compensen las posibles pérdidas de otras.<br><br>
 
 Cuando una persona principiante empieza a invertir, suele concentrar todo su dinero en un solo activo o tipo de inversión: por ejemplo, en acciones de una empresa, o en un depósito a plazo. El problema es que si ese activo falla, todo el capital se ve afectado. La diversificación evita eso, distribuyendo el dinero entre distintas opciones, sectores o incluso países.<br><br>
 
@@ -496,7 +540,7 @@ El mercado financiero es impredecible. Un año las acciones pueden subir mucho, 
 - Diversifica por ubicación geográfica: mezcla inversiones chilenas con internacionales, ya que las economías no siempre se comportan igual.<br><br>
 
 <b>3. El papel de los ETFs y fondos mutuos:</b><br>
-Los <b>ETFs (Exchange Traded Funds)</b> y los fondos mutuos son herramientas ideales para lograr diversificación sin tener que comprar decenas de activos distintos. Por ejemplo, un solo ETF puede incluir acciones de cientos de empresas en todo el mundo. Así, al invertir en uno, automáticamente estás distribuyendo tu riesgo entre muchos sectores y países.<br><br>
+Los ETFs (Exchange Traded Funds) y los fondos mutuos son herramientas ideales para lograr diversificación sin tener que comprar decenas de activos distintos. Por ejemplo, un solo ETF puede incluir acciones de cientos de empresas en todo el mundo. Así, al invertir en uno, automáticamente estás distribuyendo tu riesgo entre muchos sectores y países.<br><br>
 
 En Chile, plataformas como <a href="https://www.fintual.cl" target="_blank">Fintual</a>, <a href="https://www.banchileinversiones.cl" target="_blank">Banchile Inversiones</a> o <a href="https://www.inversiones.security.cl" target="_blank">Security Inversiones</a> ofrecen fondos con distintos niveles de riesgo y composición, permitiéndote diversificar sin conocimientos avanzados.<br><br>
 
@@ -513,14 +557,19 @@ Imagina que cada tipo de inversión es una pierna de una mesa. Si la mesa tiene 
 - No revisar la proporción de tus inversiones cada cierto tiempo.<br>
 - Creer que diversificar significa tener muchas inversiones del mismo tipo (por ejemplo, varios fondos chilenos que en realidad invierten en lo mismo).<br><br>
 
-En resumen, la <b>diversificación es el escudo del inversionista inteligente</b>. No se trata solo de buscar ganancias, sino de proteger lo que tienes. Un portafolio diversificado resiste mejor las crisis, se adapta a los cambios del mercado y permite que tus inversiones crezcan de forma más estable y segura en el tiempo.""",
+La <b>diversificación es el escudo del inversionista inteligente</b>. No se trata solo de buscar ganancias, sino de proteger lo que tienes. Un portafolio diversificado resiste mejor las crisis, se adapta a los cambios del mercado y permite que tus inversiones crezcan de forma más estable y segura en el tiempo.<br><br>
+Fuentes usadas:<br>
+- <a href= "https://www.blackrock.com/mx/intermediarios/educacion/que-es-diversificacion" target="_blank">blackrock</a><br>
+- <a href= "https://chile.larrainvial.com/lv-insights/finanzas-personales/todos-hablan-de-diversificacion-pero-que-es-realmente" target="_blank">larrainvial</a><br>
+""",
 'imagen_respuesta':'inversion_7.jpg',
     },
     # recuerdo pa tontos:
     # 3: {'pregunta': "¿Qué hago con un ingreso extra?", 'respuesta': "nadota we"
     16: {
         'pregunta': "¿Como debería empezar?",
-        'respuesta': """<br>Una de las creencias más comunes entre quienes recién se interesan por las finanzas es pensar que “necesitan mucho dinero para invertir”. Sin embargo, hoy en día eso ya no es cierto. Gracias a la tecnología, las plataformas digitales y los fondos de inversión accesibles, es posible empezar incluso con montos muy bajos y ver cómo el dinero crece con el tiempo.<br><br>
+        'respuesta': """<br>Lo primero que debemos entender es que no requerimos de tener un gran presupuesto, en la actualidad hay muchas formas de poder invertir gracias
+a la gran cantidad de metodos y plataformas digitales que existen hoy en dia, las cuales permiten una inversion tomando en cuenta los presupuestos bajos, pero si tenemos que tener claro ciertos aspecto antes de empezar.<br><br>
 
 <b>1. Cambiar la mentalidad es el primer paso:</b><br>
 Invertir no es un privilegio de unos pocos, sino una herramienta para cualquiera que quiera mejorar su situación financiera. El error más grande no es tener poco dinero, sino no comenzar nunca. La inversión es un hábito, no un evento. Aunque empieces con $10.000 o $20.000 al mes, lo importante es la constancia, no la cantidad.<br><br>
@@ -556,9 +605,11 @@ La clave está en la educación: entender en qué estás invirtiendo, cuánto ri
 
 <b>8. Un ejemplo simple:</b><br>
 Supongamos que inviertes $10.000 mensuales durante 5 años en un fondo que rinde un 6% anual. Al final del período habrás aportado $600.000, pero gracias al interés compuesto podrías tener cerca de $700.000. No te harás rico, pero habrás dado un gran paso: pasaste de “guardar dinero” a “hacer que el dinero trabaje por ti”.<br><br>
-
-<b>Consejo final:</b><br>
-No esperes tener mucho para empezar; empieza con lo que tengas. El tiempo y la constancia son más poderosos que cualquier monto inicial. Cada peso invertido hoy es una semilla que crecerá con los años. Como dice una frase muy conocida en finanzas: <i>“El mejor momento para invertir fue ayer; el segundo mejor momento es hoy.”</i>""",
+Fuentes usadas:<br>
+- <a href= "https://www.cmfchile.cl/portal/principal/613/w3-article-821" target="_blank">cmf chile</a><br>
+- <a href= "https://www.cmfchile.cl/educa/621/w3-article-1654.html" target="_blank">cmf chile</a><br>
+- <a href= "https://www.bbva.com/es/12-errores-tipicos-que-debes-evitar-a-la-hora-de-invertir-2/" target="_blank">bbva</a><br>
+""",
 'imagen_respuesta':'inversion_8.webp',
     },
 }
