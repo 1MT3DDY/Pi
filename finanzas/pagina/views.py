@@ -34,6 +34,58 @@ def login_view(request):
     return render(request, 'pagina/login.html')
 
 
+def register_view(request):
+    """Handle user registration."""
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre', '').strip()
+        contraseña = request.POST.get('contraseña', '').strip()
+        confirmar_contraseña = request.POST.get('confirmar_contraseña', '').strip()
+        
+        # Validations
+        if not nombre:
+            messages.error(request, 'El nombre de usuario es requerido.')
+            return render(request, 'pagina/register.html')
+        
+        if len(nombre) < 3:
+            messages.error(request, 'El nombre de usuario debe tener al menos 3 caracteres.')
+            return render(request, 'pagina/register.html')
+        
+        if len(nombre) > 20:
+            messages.error(request, 'El nombre de usuario no puede exceder 20 caracteres.')
+            return render(request, 'pagina/register.html')
+        
+        if not contraseña:
+            messages.error(request, 'La contraseña es requerida.')
+            return render(request, 'pagina/register.html')
+        
+        if len(contraseña) < 4:
+            messages.error(request, 'La contraseña debe tener al menos 4 caracteres.')
+            return render(request, 'pagina/register.html')
+        
+        if contraseña != confirmar_contraseña:
+            messages.error(request, 'Las contraseñas no coinciden.')
+            return render(request, 'pagina/register.html')
+        
+        # Check if username already exists
+        if Usuario.objects.filter(nombre=nombre).exists():
+            messages.error(request, 'El nombre de usuario ya está registrado.')
+            return render(request, 'pagina/register.html')
+        
+        # Create new user
+        try:
+            usuario = Usuario.objects.create(
+                nombre=nombre,
+                contraseña=contraseña
+            )
+            messages.success(request, f'¡Registro exitoso! Bienvenido {nombre}. Por favor inicia sesión.')
+            return redirect('login')
+        except Exception as e:
+            messages.error(request, f'Error al registrar el usuario: {str(e)}')
+            return render(request, 'pagina/register.html')
+    
+    return render(request, 'pagina/register.html')
+
+
 def logout_view(request):
     """Cierra la sesión removiendo la clave 'usuario_id' de la sesión y redirige al índice."""
     try:
