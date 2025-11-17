@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}FinanzApp{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+                <h2 style="margin:0;">FinanzApp</h2>
+            </div>
+            <div style="display:flex;gap:20px;align-items:center;">
+                <div style="display:flex;gap:15px;">
+                    <a href="{% url 'index' %}">Inicio</a>
+                </div>
+                <div style="border-left:1px solid #ccc;padding-left:20px;">
+                    {% if usuario_nombre %}
+                        <span style="font-weight:bold;">{{ usuario_nombre }}</span>
+                        {% if usuario_tipo %}
+                            &nbsp;•&nbsp;<span style="font-style:italic;color:#3498db">{{ usuario_tipo }}</span>
+                        {% endif %}
+                        {% if 'usuario_id' in request.session %}
+                        &nbsp;|&nbsp;<a href="{% url 'logout' %}" style="color:#e74c3c;text-decoration:none;">Cerrar sesión</a>
+                        {% endif %}
+                    {% else %}
+                        <a href="{% url 'login' %}">Iniciar sesión</a>
+                        &nbsp;|&nbsp;
+                        <a href="{% url 'register' %}">Registrarse</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

@@ -6,7 +6,7 @@ def usuario_context(request):
     a todas las plantillas si el usuario está logueado (guardado en sesión).
     Variables añadidas:
       - usuario_nombre
-      - usuario_tipo
+      - usuario_tipo (nombre del perfil)
     """
     usuario_id = request.session.get('usuario_id')
     if not usuario_id:
@@ -18,8 +18,7 @@ def usuario_context(request):
 
     tipo = None
     if usuario.perfil:
-        # perfil es FK a QuizIn y QuizIn tiene campo tipo_perfil
-        tipo = getattr(usuario.perfil, 'tipo_perfil', None)
+        tipo = usuario.perfil.nombre
 
     return {
         'usuario_nombre': usuario.nombre,

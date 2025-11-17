@@ -1,111 +1,42 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Sistema Financiero</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5;
-        }
-        .login-container {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        input {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        button {
-            width: 100%;
-            padding: 0.75rem;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .messages {
-            margin-bottom: 1rem;
-        }
-        .error {
-            color: red;
-            margin-bottom: 1rem;
-        }
-        .register-link {
-            text-align: center;
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid #ddd;
-        }
-        .register-link a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .register-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div style="position:fixed;top:10px;right:10px;color:#333;">
-        {% if usuario_nombre %}
-            Hola, <strong>{{ usuario_nombre }}</strong> {% if usuario_tipo %}(<em>{{ usuario_tipo }}</em>){% endif %}
-            &nbsp;|&nbsp;<a href="{% url 'logout' %}">Cerrar sesión</a>
-        {% endif %}
-    </div>
+{% extends "layouts/base.html" %}
+{% block extra_css %}
+<style>
+    .auth-container { min-height: 80vh; display:flex; align-items:center; justify-content:center; padding:3rem 1rem; }
+    .form-container { background: white; border-radius: 15px; padding: 3rem; box-shadow: 0 15px 50px rgba(0,0,0,0.3); width:100%; max-width:450px; }
+    .form-container h2 { color:#2c3e50; text-align:center; margin-bottom:1.5rem; font-size:1.6rem; }
+    .form-group { margin-bottom:1rem }
+    .form-group input { width:100%; padding:0.85rem; border:2px solid #ecf0f1; border-radius:8px; }
+    .btn { width:100%; padding:1rem; background: linear-gradient(135deg,#3498db,#2980b9); color:white; border:none; border-radius:8px; font-weight:600; }
+    .messages { margin-bottom:1rem }
+    .alert { padding:0.9rem; border-left:4px solid; border-radius:8px }
+    .register-link { text-align:center; margin-top:1.5rem }
+</style>
+{% endblock %}
 
-    <div class="login-container">
-        <h2 style="text-align: center;">Iniciar Sesión</h2>
-        
+{% block content %}
+<div class="auth-container">
+    <div class="form-container">
+        <h2>🔑 Iniciar Sesión</h2>
         {% if messages %}
         <div class="messages">
             {% for message in messages %}
-                <div class="error">{{ message }}</div>
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
             {% endfor %}
         </div>
         {% endif %}
-        
         <form method="POST">
             {% csrf_token %}
             <div class="form-group">
-                <label for="nombre">Nombre de Usuario:</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <label for="nombre">Nombre de usuario</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre de usuario">
             </div>
             <div class="form-group">
-                <label for="contraseña">Contraseña:</label>
-                <input type="password" id="contraseña" name="contraseña" required>
+                <label for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" required placeholder="Tu contraseña">
             </div>
-            <button type="submit">Iniciar Sesión</button>
+            <button type="submit" class="btn">Iniciar Sesión</button>
         </form>
-        
-        <div class="register-link">
-            ¿No tienes cuenta? <a href="{% url 'register' %}">Regístrate aquí</a>
-        </div>
+        <div class="register-link">¿No tienes cuenta? <a href="{% url 'register' %}">Regístrate aquí</a></div>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

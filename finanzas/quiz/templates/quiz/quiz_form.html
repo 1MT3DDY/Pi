@@ -1,8 +1,117 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-<div class="container mt-5 mb-5">
-    <h2 class="mb-5" style="color: #2c3e50; font-weight: 600; text-align: center;">Cuestionario de Perfil de Inversión</h2>
+<style>
+    .quiz-container {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 3rem 2rem;
+        position: relative;
+        left: calc(50% - 50vw);
+        width: 100vw;
+    }
+    
+    .quiz-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .quiz-wrapper h2 {
+        color: white;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 3rem !important;
+        font-size: 2rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .card {
+        background: rgba(255, 255, 255, 0.95) !important;
+        border: none !important;
+        border-radius: 15px !important;
+        border-left: 5px solid #3498db !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+        margin-bottom: 1.5rem !important;
+        transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(52, 152, 219, 0.25) !important;
+    }
+    
+    .card-body {
+        padding: 1.5rem !important;
+    }
+    
+    .form-check {
+        padding: 1rem !important;
+        border: 2px solid #ecf0f1 !important;
+        border-radius: 8px !important;
+        background-color: #f9fafb !important;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-left: 0 !important;
+    }
+    
+    .form-check:hover {
+        border-color: #3498db !important;
+        background-color: #f0f8ff !important;
+        transform: translateX(5px);
+    }
+    
+    .form-check input:checked ~ label span {
+        color: #3498db !important;
+        font-weight: 700;
+    }
+    
+    .form-check input:checked {
+        background-color: #3498db !important;
+        border-color: #3498db !important;
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, #27ae60, #229954) !important;
+        border: none !important;
+        padding: 12px 40px !important;
+        font-weight: 600 !important;
+        border-radius: 8px !important;
+        font-size: 1.05rem !important;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(39, 174, 96, 0.3) !important;
+    }
+    
+    .alert {
+        background: rgba(52, 152, 219, 0.1) !important;
+        border-radius: 8px !important;
+        border-left: 4px solid #3498db !important;
+        color: #2c3e50 !important;
+    }
+    
+    .btn-secondary {
+        background: linear-gradient(135deg, #95a5a6, #7f8c8d) !important;
+        border: none !important;
+        padding: 10px 30px !important;
+        font-weight: 600 !important;
+        border-radius: 8px !important;
+    }
+    
+    .btn-secondary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(95, 110, 120, 0.3) !important;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+</style>
+<div class="quiz-container">
+    <div class="quiz-wrapper">
+        <h2>❓ Cuestionario de Perfil de Inversión</h2>
     {% if can_take_quiz %}
     <form method="post">
         {% csrf_token %}
@@ -49,23 +158,6 @@
         <a href="{% url 'index' %}" class="btn btn-secondary" style="padding: 10px 30px; font-weight: 600; border-radius: 8px;">Volver al inicio</a>
     </div>
     {% endif %}
+    </div>
 </div>
-
-<style>
-    .form-check:hover {
-        border-color: #3498db !important;
-        background-color: #f0f8ff !important;
-        transform: translateX(5px);
-    }
-    
-    .form-check input:checked ~ label span {
-        color: #3498db !important;
-        font-weight: 700;
-    }
-    
-    .form-check input:checked {
-        background-color: #3498db;
-        border-color: #3498db;
-    }
-</style>
 {% endblock %}

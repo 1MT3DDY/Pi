@@ -222,3 +222,8 @@ __marimo__/
 #API key
 .env
 /finanzas/textos/__pycache__
+/finanzas/finanzas/__pycache__
+/finanzas/pagina/__pycache__
+/finanzas/pagina/__pycache__
+finanzas/pagina/__pycache__/views.cpython-313.pyc
+*.pyc

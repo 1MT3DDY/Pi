@@ -1,19 +1,73 @@
 {% extends "layouts/base.html" %} 
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/textos.css' %}">
-    <div style="padding: 40px; max-width: 900px; margin: 0 auto;">
+<style>
+    .detalle-container {
+        min-height: 100vh;
+        padding: 3rem 2rem;
+    }
+    
+    .detalle-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 3rem;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        backdrop-filter: blur(10px);
+    }
+    
+    .detalle-wrapper h1 {
+        color: #2c3e50;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid #3498db;
+    }
+    
+    .imagen-respuesta {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(52, 152, 219, 0.2);
+    }
+    
+    .detalle-wrapper p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+    }
+    
+    .detalle-wrapper a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+        margin-top: 2rem;
+    }
+    
+    .detalle-wrapper a:hover {
+        color: #2980b9;
+        transform: translateX(-5px);
+    }
+</style>
+<div class="detalle-container">
+    <div class="detalle-wrapper">
         <h1>{{ titulo_pagina }}</h1>
         <hr><br>
         <img class="imagen-respuesta"
              src="{% static 'images/'|add:imagen_respuesta %}" 
             alt="{{ titulo_pagina }}" 
-            style="max-width: 100%; height: auto; margin-bottom: 20px; border-radius: 6px;">
-        <p style="font-size: 1.2em; line-height: 1.8;">
+            style="border-radius: 12px; box-shadow: 0 5px 20px rgba(52, 152, 219, 0.2);">
+        <p>
             {{ respuesta_bonita }}
         </p>
         
-        <br>
-        <p><a href="{% url 'textos_base' %}">← Volver al indice de Preguntas</a></p>
+        <a href="{% url 'textos_base' %}">← Volver al indice de Preguntas</a>
     </div>
+</div>
 {% endblock %}

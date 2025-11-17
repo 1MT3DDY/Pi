@@ -1,17 +1,86 @@
 {% extends "layouts/base.html" %} 
 {% load static %}
-{% block content %} 
-    <link rel="stylesheet" href="{% static 'css/textos.css' %}">
+{% block content %}
+<style>
+    .seccion-textos-fondo {
+        min-height: 100vh;
+        padding: 3rem 2rem;
+    }
+    
+    .seccion-textos-fondo h1 {
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 3rem !important;
+    }
+    
+    .categorias {
+        display: flex;
+        justify-content: space-around;
+        gap: 2rem;
+        flex-wrap: wrap;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .categoria_video {
+        width: 45%;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        backdrop-filter: blur(10px);
+    }
+    
+    .categoria_video h2 {
+        color: #2c3e50;
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid #3498db;
+    }
+    
+    .pregunta-item {
+        margin-bottom: 40px !important;
+        transition: all 0.3s ease;
+    }
+    
+    .pregunta-item h3 {
+        margin: 0;
+    }
+    
+    .pregunta-item a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.05rem;
+        transition: all 0.3s ease;
+    }
+    
+    .pregunta-item a:hover {
+        color: #2980b9;
+        text-decoration: underline;
+        transform: translateX(5px);
+    }
+    
+    @media (max-width: 1024px) {
+        .categoria_video {
+            width: 100%;
+        }
+    }
+</style>
     <div class="seccion-textos-fondo">
  
-     <h1 style="text-align: center; margin-bottom: 50px;">RECURSOS POR PERFIL</h1>
+     <h1 style="text-align: center;">📚 RECURSOS POR PERFIL</h1>
     
-     <div class="categorias" style="display: flex; justify-content: space-around;">
+     <div class="categorias">
         
-      <div class="categoria_video" style="width: 45%;">
+      <div class="categoria_video">
             <h2>Guia basica de ahorro</h2>
             {% for id in preguntas_ids|slice:"8" %}
-                <div class="pregunta-item" style="margin-bottom: 40px;">
+                <div class="pregunta-item">
                     <h3 id="pregunta-{{ id }}"><a href="{% url 'pregunta_detalle' id %}">
                         {% if id == 1 %} ¿Es importante registrar ingresos y gastos?
                         {% elif id == 2 %} ¿Que papel tiene el habito y disciplina?
@@ -28,10 +97,10 @@
             {% endfor %}
         </div>
 
-        <div class="categoria_video" style="width: 45%;">
+        <div class="categoria_video">
             <h2>Guia basica de Inversión</h2>
             {% for id in preguntas_ids|slice:"8:16" %}
-                <div class="pregunta-item" style="margin-bottom: 54.5px;">
+                <div class="pregunta-item">
                     <h3 id="pregunta-{{ id }}"><a href="{% url 'pregunta_detalle' id %}">
                         {% if id == 9 %} ¿Que importancia tiene la fijacion de objetivos?
                         {% elif id == 10 %} ¿Que es el fondo de emergencia?

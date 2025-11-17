@@ -1,1 +1,9 @@
-<!DOCTYPE html>
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="container mx-auto py-8">
+	<h1 class="text-3xl font-bold mb-4">Quiz</h1>
+	<p class="mb-4">Bienvenido al quiz. Cuando estés listo, comienza haciendo clic en el botón.</p>
+	<a href="{% url 'quiz' %}" class="inline-block px-4 py-2 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded shadow">Comenzar Quiz</a>
+</div>
+{% endblock %}

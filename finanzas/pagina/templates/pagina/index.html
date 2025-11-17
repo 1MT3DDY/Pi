@@ -1,136 +1,91 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinanzApp - Tu Asesor Financiero Personal</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        
-        .header {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .navbar {
-            background-color: #34495e;
-            padding: 1rem;
-            text-align: center;
-        }
-        
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        
-        .navbar a:hover {
-            background-color: #2c3e50;
-        }
+{% extends "layouts/base.html" %}
+{% block extra_css %}
+<style>
+    .main-container {
+        max-width: 1200px;
+        margin: 3rem auto;
+        padding: 0 2rem;
+    }
+    .welcome-section {
+        background: white;
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    .welcome-section h2 { color: #2c3e50; margin-bottom: 1rem; font-size: 2rem; }
+    .welcome-section p { color: #7f8c8d; font-size: 1.05rem; line-height: 1.8; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+    .feature-card { background: white; border-radius: 15px; padding: 2.5rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s; text-align: center; text-decoration: none; color: inherit; cursor: pointer; }
+    .feature-card:hover { transform: translateY(-15px); box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+    .icon { font-size: 3rem; margin-bottom: 1rem; }
+    .feature-card h3 { color: #2c3e50; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 600; }
+    .feature-card p { color: #7f8c8d; margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
+    .btn { display: inline-block; padding: 0.8rem 1.8rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s; border: none; cursor: pointer; font-size: 0.95rem; }
+    .btn:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4); }
+    .btn-primary { background: linear-gradient(135deg, #27ae60, #229954); }
+    .btn-primary:hover { box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4); }
+</style>
+{% endblock %}
 
-        .navbar .quiz-btn {
-            background-color: #27ae60;
-        }
-
-        .navbar .quiz-btn:hover {
-            background-color: #219a52;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        
-        .presentation {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .feature-card {
-            background-color: #3498db;
-            color: white;
-            padding: 1rem;
-            border-radius: 4px;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>FinanzApp</h1>
-        <p>Tu compañero en el camino hacia la libertad financiera</p>
-    </div>
-    
-    <nav class="navbar">
-        <div style="display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:0 auto;">
-            <div>
-                <a href="{% url 'login' %}">Login</a>
-                <a href="{% url 'calculadora' %}">Calculadora</a> 
-                <a href="/videos">Videos</a>
-                <a href="/textos">Recursos</a>
-                {% if usuario_perfil == NULL %}
-                <a href="{% url 'quiz' %}" class="quiz-btn">Quiz de Perfil</a>
-                {% endif %}
-            </div>
-            <div style="color:white;">
-                {% if usuario_nombre %}
-                    Hola, <strong>{{ usuario_nombre }}</strong>
-                    {% if usuario_tipo %}
-                        &nbsp;•&nbsp;<em>{{ usuario_tipo }}</em>
-                    {% endif %}
-                    &nbsp;|&nbsp;<a href="{% url 'logout' %}" style="color: #f1c40f; text-decoration: underline;">Cerrar sesión</a>
-                {% else %}
-                    <em>No has iniciado sesión</em>
-                {% endif %}
-            </div>
-        </div>
-    </nav>
-    
-    <div class="container">
-        <div class="presentation">
+{% block content %}
+    <div class="main-container">
+        <div class="welcome-section">
             <h2>Bienvenido a FinanzApp</h2>
-            <p>
-                FinanzApp es tu asistente personal para mejorar tus hábitos financieros. 
-                A través de un cuestionario personalizado, determinaremos tu perfil financiero 
-                y te proporcionaremos recomendaciones adaptadas a tus necesidades.
-            </p>
-            
-            <div class="features">
-                <div class="feature-card">
-                    <h3>Perfil Personalizado</h3>
-                    <p>Descubre tu estilo de manejo financiero</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Recursos Educativos</h3>
-                    <p>Aprende con nuestros materiales</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Videos Tutoriales</h3>
-                    <p>Contenido visual para mejor aprendizaje</p>
-                </div>
+            <p>Descubre tu perfil financiero único y recibe recomendaciones personalizadas. Con FinanzApp puedes conocer tus hábitos de dinero, aprender nuevas estrategias y mejorar tu relación con las finanzas.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <a href="{% url 'quiz' %}" style="display: block;">
+                    <div class="icon">📋</div>
+                    <h3>Quiz de Perfil</h3>
+                    <p>Completa nuestro cuestionario interactivo para descubrir tu perfil financiero. Te haremos preguntas sobre tus hábitos de dinero y al final sabrás si eres conservador, normal o arriesgado.</p>
+                    <button class="btn btn-primary">Comenzar Quiz</button>
+                </a>
             </div>
+            <div class="feature-card">
+                <a href="{% url 'calculadora' %}" style="display: block;">
+                    <div class="icon">🧮</div>
+                    <h3>Calculadora</h3>
+                    <p>Utiliza nuestras herramientas de cálculo para analizar tus gastos, planificar presupuestos y proyectar tus inversiones de manera sencilla.</p>
+                    <button class="btn">Ir a Calculadora</button>
+                </a>
+            </div>
+            <div class="feature-card">
+                <a href="/videos" style="display: block;">
+                    <div class="icon">🎥</div>
+                    <h3>Videos Educativos</h3>
+                    <p>Aprende con nuestros videos tutoriales seleccionados especialmente según tu perfil. Contenido de calidad para mejorar tu educación financiera.</p>
+                    <button class="btn">Ver Videos</button>
+                </a>
+            </div>
+            <div class="feature-card">
+                <a href="/textos" style="display: block;">
+                    <div class="icon">📚</div>
+                    <h3>Recursos y Textos</h3>
+                    <p>Accede a artículos, guías y materiales educativos personalizados para tu tipo de perfil financiero.</p>
+                    <button class="btn">Leer Recursos</button>
+                </a>
+            </div>
+            {% if not usuario_nombre %}
+            <div class="feature-card">
+                <a href="{% url 'login' %}" style="display: block;">
+                    <div class="icon">🔑</div>
+                    <h3>Iniciar Sesión</h3>
+                    <p>¿Ya tienes cuenta? Accede a tu perfil, visualiza tu progreso y continúa aprendiendo donde lo dejaste.</p>
+                    <button class="btn">Inicia Sesión</button>
+                </a>
+            </div>
+            <div class="feature-card">
+                <a href="{% url 'register' %}" style="display: block;">
+                    <div class="icon">✍️</div>
+                    <h3>Crear Cuenta</h3>
+                    <p>¿Es tu primera vez? Regístrate ahora y comienza tu viaje hacia mejorar tu educación financiera.</p>
+                    <button class="btn">Registrarse</button>
+                </a>
+            </div>
+            {% endif %}
         </div>
     </div>
-</body>
-</html> 
+{% endblock %}

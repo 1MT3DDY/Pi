@@ -3,72 +3,157 @@
 
 {% block extra_css %}
 <style>
-    /* FRONT END HECHO POR IA  */
+    .calculator-wrapper {
+        min-height: 100vh;
+        padding: 3rem 2rem;
+    }
+    
     .calculadora-container {
-        max-width: 600px;
-        margin: 40px auto; 
-        padding: 25px;
-        background-color: #ffffff; 
-        color: #000000;            
-        border-radius: 8px; 
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 3rem;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        backdrop-filter: blur(10px);
+    }
+    
+    .calculadora-container h1 {
+        color: #2c3e50;
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    
+    .calculadora-container > p {
+        color: #7f8c8d;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.05rem;
     }
 
-    /* Estilos para el formulario */
     .calculadora-container form {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 1rem;
     }
+    
+    .calculadora-container h2 {
+        color: #3498db;
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #ecf0f1;
+        padding-bottom: 0.5rem;
+    }
+    
+    .calculadora-container label {
+        color: #2c3e50;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        display: block;
+    }
+    
     .calculadora-container input {
-        padding: 8px;
-        font-size: 16px;
-        border: 1px solid #ccc; 
-        border-radius: 4px;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border: 2px solid #ecf0f1;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        background-color: #f9fafb;
     }
+    
+    .calculadora-container input:focus {
+        outline: none;
+        border-color: #3498db;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        background-color: white;
+    }
+    
     .calculadora-container button {
-        padding: 10px;
-        font-size: 16px;
-        background-color: #007bff;
+        padding: 1rem;
+        font-size: 1.1rem;
+        background: linear-gradient(135deg, #27ae60, #229954);
         color: white;
         border: none;
         cursor: pointer;
-        border-radius: 4px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
     }
     
-    /* Estilos para los resultados (rojo, amarillo, verde) */
+    .calculadora-container button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(39, 174, 96, 0.3);
+    }
+    
     .resultado {
-        margin-top: 20px;
-        padding: 10px;
-        border-radius: 5px;
+        margin-top: 2rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 5px solid;
     }
+    
     .red {
-        background-color: #ffcccc;
-        border: 1px solid red;
-        color: #333; 
+        background-color: #fadbd8;
+        border-left-color: #e74c3c;
+        color: #922b21;
     }
+    
     .yellow {
-        background-color: #fff3cd;
-        border: 1px solid #ffc107;
-        color: #333;
+        background-color: #fef5e7;
+        border-left-color: #f39c12;
+        color: #7d6608;
     }
+    
     .green {
-        background-color: #ccffcc;
-        border: 1px solid green;
-        color: #333;
+        background-color: #d5f4e6;
+        border-left-color: #27ae60;
+        color: #0b5345;
     }
+    
+    .resultado h2, .resultado h3 {
+        margin-bottom: 1rem;
+        color: inherit;
+    }
+    
     .calculadora-container ul {
         list-style-type: none;
         padding-left: 0;
     }
+    
     .calculadora-container li {
-        margin-bottom: 5px;
+        margin-bottom: 0.8rem;
+        padding: 0.5rem;
+        background-color: rgba(255,255,255,0.5);
+        border-radius: 4px;
+        color: inherit;
+    }
+    
+    .consejo {
+        background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1)) !important;
+        padding: 1.5rem !important;
+        border-left: 5px solid #3498db !important;
+        border-radius: 8px !important;
+        margin-top: 2rem !important;
+    }
+    
+    .consejo h4 {
+        color: #3498db;
+        margin-bottom: 1rem;
+    }
+    
+    .consejo p {
+        color: #2c3e50;
+        line-height: 1.8;
     }
 </style>
 {% endblock %}
 
-
 {% block content %}
+<div class="calculator-wrapper">
 <div class="calculadora-container">
 
     <h1>Calculadora Financiera</h1>
@@ -160,14 +245,11 @@
     {% if mensaje_recomendado %}
     <hr style="margin-top: 25px;">
     
-    <div class="consejo" style="background-color: #f4f8ff; padding: 20px; border-left: 5px solid #007bff; border-radius: 8px; margin-top: 20px;">
-        <h4 style="margin-bottom: 10px; color: #007bff;">💡 Un consejo de FinanzApp para ti:</h4>
-        
-        <p style="font-size: 1.1em; line-height: 1.6; color: #333;">
-            {{ mensaje_recomendado|safe }}
-        </p>
+    <div class="consejo">
+        <h4>💡 Un consejo de FinanzApp para ti:</h4>
+        <p>{{ mensaje_recomendado|safe }}</p>
     </div>
     {% endif %}
-    </div>
-
-</div> {% endblock %}   
+</div>
+</div>
+{% endblock %}   

@@ -3,7 +3,16 @@ from django.contrib import messages
 from .models import Usuario, Login
 
 def index(request):
-    return render(request, 'pagina/index.html')
+    context = {}
+    if 'usuario_id' in request.session:
+        try:
+            usuario = Usuario.objects.get(id=request.session['usuario_id'])
+            context['usuario'] = usuario
+            if usuario.perfil:
+                context['perfil_nombre'] = usuario.perfil.nombre
+        except Usuario.DoesNotExist:
+            pass
+    return render(request, 'pagina/index.html', context)
 
 def videos_view(request):
     return render(request, 'pagina/videos.html')

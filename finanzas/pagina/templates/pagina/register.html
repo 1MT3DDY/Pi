@@ -1,78 +1,48 @@
 {% extends "layouts/base.html" %}
+{% block extra_css %}
+<style>
+    .auth-container { min-height: 80vh; display:flex; align-items:center; justify-content:center; padding:3rem 1rem; }
+    .form-container { background: white; border-radius: 15px; padding: 3rem; box-shadow: 0 15px 50px rgba(0,0,0,0.3); width:100%; max-width:450px; }
+    .form-container h2 { color:#2c3e50; text-align:center; margin-bottom:1.5rem; font-size:1.6rem; }
+    .form-group { margin-bottom:1rem }
+    .form-group input { width:100%; padding:0.85rem; border:2px solid #ecf0f1; border-radius:8px; }
+    .btn { width:100%; padding:1rem; background: linear-gradient(135deg,#27ae60,#229954); color:white; border:none; border-radius:8px; font-weight:600; }
+    .messages { margin-bottom:1rem }
+    .alert { padding:0.9rem; border-left:4px solid; border-radius:8px }
+    .login-link { text-align:center; margin-top:1.5rem }
+</style>
+{% endblock %}
 
 {% block content %}
-<div class="container mt-5 mb-5">
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div style="background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
-                <h2 class="mb-4" style="color: #2c3e50; font-weight: 700; text-align: center;">Crear Cuenta</h2>
-                
-                {% if messages %}
-                    {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" style="border-radius: 8px;">
-                        {{ message }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    {% endfor %}
-                {% endif %}
-                
-                <form method="post">
-                    {% csrf_token %}
-                    
-                    <div class="mb-4">
-                        <label for="nombre" class="form-label" style="color: #2c3e50; font-weight: 600;">Nombre de usuario</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej: usuario123" required style="border-radius: 8px; border: 2px solid #ecf0f1; padding: 10px 15px; font-size: 1rem;">
-                        <small class="form-text" style="color: #7f8c8d;">Mínimo 3 caracteres, máximo 20</small>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label for="contraseña" class="form-label" style="color: #2c3e50; font-weight: 600;">Contraseña</label>
-                        <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Ingresa tu contraseña" required style="border-radius: 8px; border: 2px solid #ecf0f1; padding: 10px 15px; font-size: 1rem;">
-                        <small class="form-text" style="color: #7f8c8d;">Mínimo 4 caracteres</small>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label for="confirmar_contraseña" class="form-label" style="color: #2c3e50; font-weight: 600;">Confirmar contraseña</label>
-                        <input type="password" class="form-control" id="confirmar_contraseña" name="confirmar_contraseña" placeholder="Repite tu contraseña" required style="border-radius: 8px; border: 2px solid #ecf0f1; padding: 10px 15px; font-size: 1rem;">
-                    </div>
-                    
-                    <button type="submit" class="btn w-100" style="background-color: #3498db; color: white; font-weight: 600; padding: 12px; border-radius: 8px; border: none; font-size: 1rem; transition: all 0.25s ease;">
-                        Registrarse
-                    </button>
-                </form>
-                
-                <div class="mt-4 text-center">
-                    <p style="color: #7f8c8d;">¿Ya tienes cuenta? 
-                        <a href="{% url 'login' %}" style="color: #3498db; text-decoration: none; font-weight: 600;">Inicia sesión aquí</a>
-                    </p>
-                </div>
-            </div>
+<div class="auth-container">
+    <div class="form-container">
+        <h2>✍️ Crear Cuenta</h2>
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
         </div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nombre">Nombre de usuario</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: usuario123" required>
+                <small>Mínimo 3 caracteres, máximo 20</small>
+            </div>
+            <div class="form-group">
+                <label for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" placeholder="Ingresa tu contraseña" required>
+                <small>Mínimo 4 caracteres</small>
+            </div>
+            <div class="form-group">
+                <label for="confirmar_contraseña">Confirmar contraseña</label>
+                <input type="password" id="confirmar_contraseña" name="confirmar_contraseña" placeholder="Repite tu contraseña" required>
+            </div>
+            <button type="submit" class="btn">Registrarse</button>
+        </form>
+        <div class="login-link">¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a></div>
     </div>
 </div>
-
-<style>
-    .form-control:focus {
-        border-color: #3498db !important;
-        box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
-    }
-    
-    .btn:hover {
-        background-color: #2980b9 !important;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
-    }
-    
-    .alert-error {
-        background-color: #fadbd8;
-        border-color: #f5b7b1;
-        color: #922b21;
-    }
-    
-    .alert-success {
-        background-color: #d5f4e6;
-        border-color: #a9dfbf;
-        color: #0b5345;
-    }
-</style>
 {% endblock %}
