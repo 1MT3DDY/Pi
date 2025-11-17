@@ -221,3 +221,4 @@ __marimo__/
 
 #API key
 .env
+/finanzas/textos/__pycache__
