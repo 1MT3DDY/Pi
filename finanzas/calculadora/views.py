@@ -61,14 +61,26 @@ def vista_calculadora(request):
         
         try:
             # Obtener los datos del formulario (salario y gastos fijos)
-            ingresos = float(request.POST.get('ingresos', 0))
+            ingresos_str = request.POST.get('ingresos', '').strip()
+            if not ingresos_str:
+                raise ValueError("Los ingresos no pueden estar vacíos")
+            ingresos = float(ingresos_str)
             
             # Los gastos fijos que vienen del formulario
-            gasto_arriendo = float(request.POST.get('gasto_arriendo', 0))
-            gasto_servicios = float(request.POST.get('gasto_servicios', 0)) 
-            gasto_educacion = float(request.POST.get('gasto_educacion', 0))
-            gasto_transporte = float(request.POST.get('gasto_transporte', 0)) 
-            gasto_otros = float(request.POST.get('gasto_otros', 0))
+            gasto_arriendo_str = request.POST.get('gasto_arriendo', '').strip()
+            gasto_arriendo = float(gasto_arriendo_str) if gasto_arriendo_str else 0
+            
+            gasto_servicios_str = request.POST.get('gasto_servicios', '').strip()
+            gasto_servicios = float(gasto_servicios_str) if gasto_servicios_str else 0
+            
+            gasto_educacion_str = request.POST.get('gasto_educacion', '').strip()
+            gasto_educacion = float(gasto_educacion_str) if gasto_educacion_str else 0
+            
+            gasto_transporte_str = request.POST.get('gasto_transporte', '').strip()
+            gasto_transporte = float(gasto_transporte_str) if gasto_transporte_str else 0
+            
+            gasto_otros_str = request.POST.get('gasto_otros', '').strip()
+            gasto_otros = float(gasto_otros_str) if gasto_otros_str else 0
 
             #Los sumamos 
             total_gastos_fijos = gasto_arriendo + gasto_servicios + gasto_educacion + gasto_transporte + gasto_otros
@@ -136,9 +148,19 @@ def vista_calculadora(request):
                         'inversion': presupuesto * 0.15,
                         'transporte': presupuesto * 0.05,
                         'otros': presupuesto * 0.30, 
-                }
+                    }
                 else:  
                     contexto['error'] = " Por favor realize el quiz."
+            else:
+                # Si presupuesto <= 0, mostrar una distribución vacía
+                contexto['distribucion'] = {
+                    'mercaderia': 0, 
+                    'salud': 0,
+                    'ahorro': 0,
+                    'inversion': 0,
+                    'transporte': 0,
+                    'otros': 0, 
+                }
 
             contexto['ingresos'] = ingresos
             contexto['total_gastos_fijos'] = total_gastos_fijos
@@ -147,8 +169,10 @@ def vista_calculadora(request):
             contexto['status_color'] = status_color
             contexto['form_data'] = request.POST 
 
+        except ValueError as ve:
+            contexto['error'] = "Error en los datos: {}. Por favor verifica que todos los campos tengan números válidos.".format(str(ve))
         except Exception as e:
-            contexto['error'] = "Error en los datos: {}. Asegurate de ingresar solo numeros.".format(e) 
+            contexto['error'] = "Error inesperado: {}. Por favor intenta de nuevo.".format(str(e)) 
 
   
     return render(request, 'calculadora/index.html', contexto) 
