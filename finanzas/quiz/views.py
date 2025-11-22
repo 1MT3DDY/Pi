@@ -4,8 +4,7 @@ from .models import preguntas
 from pagina.models import Usuario, QuizIn, Perfil
 
 
-def _ensure_user_can_take_quiz(request):
-    """Return (usuario, redirect_response) where redirect_response is None when OK."""
+def usuario_puede_tomar_quiz(request):
     if 'usuario_id' not in request.session:
         messages.error(request, 'Debes iniciar sesión para realizar el quiz')
         return None, redirect('login')
@@ -20,35 +19,60 @@ def _ensure_user_can_take_quiz(request):
         return None, redirect('index')
     return usuario, None
 
+def quiz_landing(request):
+    if 'usuario_id' not in request.session:
+        messages.error(request, 'Debes iniciar sesión para ver el quiz')
+        return redirect('login')
+    
+    try:
+        usuario = Usuario.objects.get(id=request.session['usuario_id'])
+    except Usuario.DoesNotExist:
+        return redirect('login')
+
+
+    tiene_quiz = QuizIn.objects.filter(id_us=usuario).exists()
+    
+    context = {
+        'tiene_quiz': tiene_quiz,
+        'usuario': usuario
+    }
+
+    return render(request, 'quiz/quiz.html', context)
 
 def quiz_start(request):
-    """Initialize quiz session and redirect to the first question."""
-    usuario, redirect_resp = _ensure_user_can_take_quiz(request)
-    if redirect_resp:
-        return redirect_resp
+    if 'usuario_id' not in request.session:
+        return redirect('login')
+        
+    usuario = Usuario.objects.get(id=request.session['usuario_id'])
 
-    # Prepare question order and empty answers in session
+    # Logitic de la estructureishon
+    # Si el usuario ya tiene un quiz y decide comenzar de nuevo, borramos lo anterior
+    QuizIn.objects.filter(id_us=usuario).delete() # Borra el registro del quiz anterior
+    usuario.perfil = None  # Quita el perfil asociado ahora
+    usuario.score = 0      # Reinicia el puntaje del usuario
+    usuario.save()         # Guarda los cambios en la fokin base waaaaa
+
     q_ids = list(preguntas.objects.values_list('id_pregunta', flat=True).order_by('id_pregunta'))
     if not q_ids:
-        messages.error(request, 'No hay preguntas disponibles en el cuestionario.')
+        messages.error(request, 'No hay preguntas disponibles.')
         return redirect('index')
+        
     request.session['quiz_qids'] = q_ids
     request.session['quiz_answers'] = {}
     request.session['quiz_score'] = 0
     request.session.modified = True
-    # redirect to first question (index 0)
+    
     return redirect('quiz_question', idx=0)
 
 
 def quiz_question(request, idx):
     """Show a single question by index and handle saving the selected answer into the session."""
-    usuario, redirect_resp = _ensure_user_can_take_quiz(request)
+    usuario, redirect_resp = usuario_puede_tomar_quiz(request)
     if redirect_resp:
         return redirect_resp
 
-    qids = request.session.get('quiz_qids')
+    qids = request.session.get('quiz_qids') #qids = question ids porsiaca
     if qids is None:
-        # If session expired or user landed directly, re-init
         return redirect('quiz')
 
     total = len(qids)
@@ -113,7 +137,7 @@ def quiz_question(request, idx):
 
 def quiz_submit(request):
     """Create QuizIn record, assign user profile based on puntaje, and show results."""
-    usuario, redirect_resp = _ensure_user_can_take_quiz(request)
+    usuario, redirect_resp = usuario_puede_tomar_quiz(request)
     if redirect_resp:
         return redirect_resp
 
@@ -137,7 +161,7 @@ def quiz_submit(request):
         elif resp == '3':
             puntaje_total += preg.respuesta_3
 
-    # Crear el registro de QuizIn asociado al usuario
+    # Crea el registro del quiz
     QuizIn.objects.create(
         id_us=usuario,
         puntaje=puntaje_total
@@ -154,7 +178,6 @@ def quiz_submit(request):
         perfil_id = 3
         tipo_perfil = 'arriesgado'
 
-    # Asignar perfil al usuario
     try:
         perfil = Perfil.objects.get(id=perfil_id)
         usuario.perfil = perfil
@@ -162,7 +185,6 @@ def quiz_submit(request):
     except Perfil.DoesNotExist:
         messages.warning(request, f'Perfil {perfil_id} no encontrado en la base de datos.')
 
-    # Limpiar la sesión del quiz
     for k in ('quiz_qids', 'quiz_answers', 'quiz_score'):
         if k in request.session:
             del request.session[k]
