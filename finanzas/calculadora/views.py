@@ -65,28 +65,56 @@ def vista_calculadora(request):
             if not ingresos_str:
                 raise ValueError("Los ingresos no pueden estar vacíos")
             ingresos = float(ingresos_str)
-            
+
             # Los gastos fijos que vienen del formulario
             gasto_arriendo_str = request.POST.get('gasto_arriendo', '').strip()
-            gasto_arriendo = float(gasto_arriendo_str) if gasto_arriendo_str else 0
+            if gasto_arriendo_str =='':
+                gasto_arriendo_str = '0'
+            gasto_arriendo = float(gasto_arriendo_str) 
             
-            gasto_servicios_str = request.POST.get('gasto_servicios', '').strip()
-            gasto_servicios = float(gasto_servicios_str) if gasto_servicios_str else 0
+            gasto_luz_str = request.POST.get('gasto_luz', '').strip() 
+            if gasto_luz_str =='':
+                gasto_luz_str = '0'
+            gasto_luz = float(gasto_luz_str) 
+
+            gasto_agua_str = request.POST.get('gasto_agua', '').strip() 
+            if gasto_agua_str =='':
+                gasto_agua_str = '0' 
+            gasto_agua = float(gasto_agua_str) 
+        
+            gasto_gas_str = request.POST.get('gasto_gas', '').strip() 
+            if gasto_gas_str =='':  
+                gasto_gas_str = '0'
+            gasto_gas = float(gasto_gas_str) 
+
+            gasto_internet_str = request.POST.get('gasto_internet', '').strip() 
+            if gasto_internet_str =='':
+                gasto_internet_str = '0'
+            gasto_internet = float(gasto_internet_str)
             
             gasto_educacion_str = request.POST.get('gasto_educacion', '').strip()
-            gasto_educacion = float(gasto_educacion_str) if gasto_educacion_str else 0
+            if gasto_educacion_str =='':
+                gasto_educacion_str = '0'
+            gasto_educacion = float(gasto_educacion_str) 
             
             gasto_transporte_str = request.POST.get('gasto_transporte', '').strip()
-            gasto_transporte = float(gasto_transporte_str) if gasto_transporte_str else 0
+            if gasto_transporte_str =='':
+                gasto_transporte_str = '0'
+            gasto_transporte = float(gasto_transporte_str) 
             
             gasto_otros_str = request.POST.get('gasto_otros', '').strip()
-            gasto_otros = float(gasto_otros_str) if gasto_otros_str else 0
+            if gasto_otros_str =='':
+                gasto_otros_str = '0'
+            gasto_otros = float(gasto_otros_str) 
 
             #Los sumamos 
-            total_gastos_fijos = gasto_arriendo + gasto_servicios + gasto_educacion + gasto_transporte + gasto_otros
+            total_gastos_fijos = gasto_arriendo + gasto_luz + gasto_agua + gasto_gas + gasto_internet + gasto_educacion + gasto_transporte + gasto_otros
             
             # definimos el presupuesto 
             presupuesto = ingresos - total_gastos_fijos
+
+    
+          # ajustamos el presupuesto por la carga   
             
             mensaje = ""
             # Lógica para el ESTADO (Verde, Amarillo, Rojo) ayuda de IA
@@ -103,17 +131,17 @@ def vista_calculadora(request):
             u = Usuario.objects.get(id=request.session['usuario_id']) 
             contexto['perfil_id'] = u.perfil_id  
 
-            if presupuesto <= 15000:
+            if presupuesto <= 15000:  
                 mensaje = "¡Números Rojos! Tienes un déficit de ${:,.0f}.".format(presupuesto)
                 status_color = "red"
     
-            elif (proporcion_gastos > 0.6): # si los gastos fijos superan el 60% de los ingresos
+            elif (proporcion_gastos > 0.75): # si los gastos fijos superan el 75% de los ingresos
                 mensaje = "¡Cuidado! Numeros Amarillos. Tus gastos fijos son muy altos. Te quedan ${:,.0f}.".format(presupuesto)
                 status_color = "yellow"
 
             else:
                 mensaje = "¡Numeros Verdes! Tu presupuesto esta saludable. Te quedan ${:,.0f}.".format(presupuesto)
-                status_color = "green"
+                status_color = "green" 
 
             contexto['mensaje_recomendado'] = random.choice(mensaje_recomendado[str(u.perfil_id)][status_color])
 
@@ -174,5 +202,4 @@ def vista_calculadora(request):
         except Exception as e:
             contexto['error'] = "Error inesperado: {}. Por favor intenta de nuevo.".format(str(e)) 
 
-  
-    return render(request, 'calculadora/index.html', contexto) 
+    return render(request, 'calculadora/index.html', contexto)  

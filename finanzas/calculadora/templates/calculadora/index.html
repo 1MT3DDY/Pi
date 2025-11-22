@@ -170,8 +170,17 @@
         <label for="gasto_arriendo">Arriendo o Hipoteca:</label>
         <input type="number" name="gasto_arriendo" value="{{ form_data.gasto_arriendo | default:0 }}">
 
-        <label for="gasto_servicios">Servicios (Luz, Agua, Gas, Internet):</label>
-        <input type="number" name="gasto_servicios" value="{{ form_data.gasto_servicios | default:0 }}">
+        <label for="gasto_luz">Luz:</label>
+        <input type="number" name="gasto_luz" value="{{ form_data.gasto_luz | default:0 }}">
+
+        <label for="gasto_agua">Agua:</label>
+        <input type="number" name="gasto_agua" value="{{ form_data.gasto_agua | default:0 }}">
+
+        <label for="gasto_gas">Gas:</label>
+        <input type="number" name="gasto_gas" value="{{ form_data.gasto_gas | default:0 }}">
+
+        <label for="gasto_internet">Internet:</label>
+        <input type="number" name="gasto_internet" value="{{ form_data.gasto_internet | default:0 }}">   
 
         <label for="gasto_educacion">Educación (Colegio, Universidad):</label>
         <input type="number" name="gasto_educacion" value="{{ form_data.gasto_educacion | default:0 }}">
@@ -179,7 +188,7 @@
         <label for="gasto_transporte">Transporte (Pasajes, Combustible):</label> 
         <input type="number" name="gasto_transporte" value="{{ form_data.gasto_transporte | default:0 }}"> 
 
-        <label for="gasto_otros">Otros Gastos Fijos (Seguros, etc.):</label>
+        <label for="gasto_otros">Otros Gastos Fijos (Seguros, Suscripciones, Netflix, spotify, etc.):</label>
         <input type="number" name="gasto_otros" value="{{ form_data.gasto_otros | default:0 }}"> 
 
         <button type="submit">Calcular Presupuesto</button>
