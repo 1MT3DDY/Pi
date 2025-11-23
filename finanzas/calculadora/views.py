@@ -2,6 +2,10 @@ from django.shortcuts import render
 from pagina.models import Usuario  
 from django.shortcuts import redirect 
 import random 
+from openpyxl import Workbook 
+from django.http import HttpResponse
+from openpyxl.styles import Alignment
+from openpyxl.utils import get_column_letter
 
 def vista_calculadora(request):
     
@@ -150,45 +154,64 @@ def vista_calculadora(request):
 
                 if u.perfil_id == 1 : #Ahorrador
                     contexto['distribucion'] = {
-                        'mercaderia': presupuesto * 0.30, 
-                        'salud': presupuesto * 0.15,
-                        'ahorro': presupuesto * 0.15,
-                        'inversion': presupuesto * 0.05,
-                        'transporte': presupuesto * 0.05,
-                        'otros': presupuesto * 0.30,  
+                        'Mercaderia': presupuesto * 0.30, 
+                        'Salud': presupuesto * 0.15,
+                        'Ahorro': presupuesto * 0.15,
+                        'Inversion': presupuesto * 0.05,
+                        'Transporte': presupuesto * 0.05,
+                        'Otros': presupuesto * 0.30,  
                     }
 
                 elif u.perfil_id == 2 : #Normal 
                     contexto['distribucion'] = {
-                        'mercaderia': presupuesto * 0.30, 
-                        'salud': presupuesto * 0.15,
-                        'ahorro': presupuesto * 0.10,
-                        'inversion': presupuesto * 0.10,
-                        'transporte': presupuesto * 0.05,
-                        'otros': presupuesto * 0.30,
+                        'Mercaderia': presupuesto * 0.30, 
+                        'Salud': presupuesto * 0.15,
+                        'Ahorro': presupuesto * 0.10,
+                        'Inversion': presupuesto * 0.10,
+                        'Transporte': presupuesto * 0.05,
+                        'Otros': presupuesto * 0.30,
                     }
                 
                 elif u.perfil_id == 3 : #Arriesgado  
                     contexto['distribucion'] = {
-                        'mercaderia': presupuesto * 0.30, 
-                        'salud': presupuesto * 0.15,
-                        'ahorro': presupuesto * 0.05,
-                        'inversion': presupuesto * 0.15,
-                        'transporte': presupuesto * 0.05,
-                        'otros': presupuesto * 0.30, 
+                        'Mercaderia': presupuesto * 0.30, 
+                        'Salud': presupuesto * 0.15,
+                        'Ahorro': presupuesto * 0.05,
+                        'Inversion': presupuesto * 0.15,
+                        'Transporte': presupuesto * 0.05,
+                        'Otros': presupuesto * 0.30, 
                     }
                 else:  
                     contexto['error'] = " Por favor realize el quiz."
             else:
                 # Si presupuesto <= 0, mostrar una distribución vacía
                 contexto['distribucion'] = {
-                    'mercaderia': 0, 
-                    'salud': 0,
-                    'ahorro': 0,
-                    'inversion': 0,
-                    'transporte': 0,
-                    'otros': 0, 
+                    'Mercaderia': 0, 
+                    'Salud': 0,
+                    'Ahorro': 0,
+                    'Inversion': 0,
+                    'Transporte': 0,
+                    'Otros': 0, 
                 }
+
+            datos_distribucion = contexto['distribucion'] 
+        
+            request.session['datos_excel'] = {
+                'ingresos': ingresos,
+                'gastos': {
+                    'Arriendo': gasto_arriendo,
+                    'Luz': gasto_luz,
+                    'Agua': gasto_agua,
+                    'Gas': gasto_gas,
+                    'Internet': gasto_internet,
+                    'Educacion': gasto_educacion,
+                    'Transporte': gasto_transporte,
+                    'Otros': gasto_otros,
+                    } ,
+                'total_gastos': total_gastos_fijos,
+                'presupuesto': presupuesto,
+                'distribucion': datos_distribucion
+            }
 
             contexto['ingresos'] = ingresos
             contexto['total_gastos_fijos'] = total_gastos_fijos
@@ -203,3 +226,67 @@ def vista_calculadora(request):
             contexto['error'] = "Error inesperado: {}. Por favor intenta de nuevo.".format(str(e)) 
 
     return render(request, 'calculadora/index.html', contexto)  
+
+def descarga_excel(request):
+
+    if 'usuario_id' not in request.session: 
+        return redirect('login')
+    
+    datos = request.session.get('datos_excel')
+    
+    if not datos:
+        return redirect('vista_calculadora')
+    
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Mi Presupuesto"
+
+    ws['A1'] = "REPORTE FINANCIERO - FINANZAPP"
+    ws.merge_cells('A1:C1') 
+    ws['A1'].alignment = Alignment(horizontal="center")
+
+    ws.append([])
+
+    ws.append(["Ingresos", datos['ingresos']])
+
+    ws.append([])
+
+    ws.append(["GASTOS FIJOS"])
+    ws.merge_cells('A5:C5')
+    ws['A5'].alignment = Alignment(horizontal="center") 
+
+    tipo_gasto = ['Tipo'] + list(datos['gastos'].keys()) 
+    ws.append(tipo_gasto)
+
+    valores_gasto = ['Monto'] + list(datos['gastos'].values()) 
+    ws.append(valores_gasto) 
+
+    ws.append([])
+
+    ws.append(["Total Gastos Fijos", datos['total_gastos']]) 
+
+    ws.append([])
+
+    ws.append(["PRESUPUESTO", datos['presupuesto']]) 
+
+    ws.append([])
+
+    ws.append(["DISTRIBUCIÓN RECOMENDADA"])
+    ws.merge_cells('A13:C13')
+    ws['A13'].alignment = Alignment(horizontal="center")
+
+    distribucion_tipo = ['Categoria'] + list(datos['distribucion'].keys())
+    ws.append(distribucion_tipo)
+
+    distribucion_valores = ['Monto'] + list(datos['distribucion'].values())
+    ws.append(distribucion_valores) 
+
+    #ayuda estetica por parte de la IA
+    for column_cells in ws.columns:
+        length = max(len(str(cell.value)) if cell.value else 0 for cell in column_cells)
+        ws.column_dimensions[get_column_letter(column_cells[0].column)].width = length + 2
+
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=presupuesto.xlsx'
+    wb.save(response)
+    return response  
